@@ -4,8 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GoPinas!</title>
+  <link rel="icon" type="image/png" href="/assets/favicon-32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/assets/favicon-16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="/assets/favicon-192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
   <style>
+    @font-face {
+      font-family: "Grift";
+      src: url("assets/Grift-Light.woff2") format("woff2");
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
     :root {
       --bs-primary: #003b9a;
       --bs-primary-rgb: 0, 59, 154;
@@ -34,10 +45,23 @@
       border-bottom: 2px solid var(--bs-primary);
       box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
     }
+    .hero-brand {
+      font-size: clamp(1.5em, 4vw + 1rem, 3em);
+      gap: 0.5em !important;
+    }
     .hero-logo {
+      max-height: 1.15em;
+      width: auto;
       max-width: 100%;
       height: auto;
       filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.08));
+    }
+    .hero-brand-name {
+      font-family: "Grift", "Segoe UI", system-ui, sans-serif;
+      font-weight: 300;
+      color: var(--bs-primary);
+      font-size: 1em;
+      line-height: 1.2;
     }
     .heading-rule {
       border-bottom: 3px solid var(--accent-yellow);
@@ -112,14 +136,18 @@
   <header class="hero py-4 py-lg-5 px-3">
     <div class="container text-start">
       <h1 class="visually-hidden">GoPinas!</h1>
-      <img
-        class="hero-logo img-fluid d-block mb-3 mb-md-4"
-        src="assets/logo-mark-with-corp-name.png"
-        alt="Go Federation of the Philippines, Inc. — GoPinas"
-        width="1200"
-        height="194"
-        decoding="async"
-      />
+      <div class="hero-brand d-flex flex-column flex-md-row align-items-md-center mb-3 mb-md-4">
+        <img
+          class="hero-logo img-fluid flex-shrink-0"
+          src="assets/logo-mark.png"
+          alt=""
+          width="2000"
+          height="2000"
+          role="presentation"
+          decoding="async"
+        />
+        <p class="hero-brand-name mb-0">Go Federation of the Philippines</p>
+      </div>
       <p class="lead text-body-secondary mb-0">Vision, mission, and strategic direction — GoPinas!</p>
     </div>
   </header>
