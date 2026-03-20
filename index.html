@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GoPinas!</title>
+  <title>GoPinas! — News</title>
   <link rel="icon" type="image/png" href="/assets/favicon-32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="/assets/favicon-16.png" sizes="16x16" />
   <link rel="icon" type="image/png" href="/assets/favicon-192.png" sizes="192x192" />
@@ -11,206 +11,16 @@
   <link rel="preload" as="image" href="assets/hero-go-kids.png?v=8" />
   <link rel="preload" as="font" href="assets/Grift-Thin.woff2" type="font/woff2" crossorigin />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-  <style>
-    @font-face {
-      font-family: "Grift";
-      src: url("assets/Grift-Light.woff2") format("woff2");
-      font-weight: 300;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Grift";
-      src: url("assets/Grift-BoldItalic.woff2") format("woff2");
-      font-weight: 700;
-      font-style: italic;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Grift";
-      src: url("assets/Grift-Thin.woff2") format("woff2");
-      font-weight: 100;
-      font-style: normal;
-      font-display: swap;
-    }
-    :root {
-      --bs-primary: #003b9a;
-      --bs-primary-rgb: 0, 59, 154;
-      --bs-secondary: #fab51a;
-      --bs-secondary-rgb: 250, 181, 26;
-      --bs-body-bg: #f4f6f9;
-      --bs-body-color: #2c2c2c;
-      --bs-link-color: #003b9a;
-      --bs-link-hover-color: #002a6e;
-      --accent-yellow: #fab51a;
-    }
-    html {
-      scroll-padding-top: 5rem;
-    }
-    body {
-      font-family: "Segoe UI", system-ui, sans-serif;
-      background-color: var(--bs-body-bg);
-      background-image:
-        radial-gradient(circle at 2em 2em, rgba(0, 59, 154, 0.05) 1px, transparent 1px),
-        radial-gradient(circle at 2em 2em, rgba(0, 59, 154, 0.05) 1px, transparent 1px);
-      background-size: 3em 3em;
-      background-position: 0 0, 1.5em 1.5em;
-    }
-    .hero {
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-      background-color: #e8edf5;
-      background-image: url("assets/hero-go-kids.png?v=8");
-      background-size: cover;
-      background-position: center 44%;
-      background-repeat: no-repeat;
-      border-bottom: 2px solid var(--bs-primary);
-      box-shadow:
-        0 4px 24px rgba(0, 59, 154, 0.07),
-        0 1px 0 rgba(255, 255, 255, 0.9) inset;
-      min-height: clamp(340px, 52vh, 640px);
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      background:
-        radial-gradient(
-          ellipse 95% 82% at 4% 12%,
-          rgba(251, 252, 254, 1) 0%,
-          rgba(251, 252, 254, 0.83) 38%,
-          rgba(251, 252, 254, 0.21) 65%,
-          transparent 83%
-        ),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, transparent 42%),
-        radial-gradient(ellipse 100% 70% at 12% 0%, rgba(0, 59, 154, 0.07), transparent 52%),
-        radial-gradient(ellipse 80% 60% at 100% 100%, rgba(250, 181, 26, 0.09), transparent 50%);
-      pointer-events: none;
-    }
-    .hero .container {
-      position: relative;
-      z-index: 1;
-      align-self: stretch;
-      width: 100%;
-    }
-    .hero-brand {
-      font-size: 1rem;
-      gap: 0.65rem 1rem !important;
-    }
-    .hero-brand-text {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.2rem;
-      min-width: 0;
-    }
-    .hero-logo {
-      max-height: 8em;
-      width: auto;
-      max-width: 100%;
-      height: auto;
-      filter: drop-shadow(0 2px 10px rgba(0, 59, 154, 0.15));
-    }
-    .hero-brand-title {
-      font-family: "Grift", "Segoe UI", system-ui, sans-serif;
-      font-weight: 700;
-      font-style: italic;
-      color: #0a0a0a;
-      font-size: clamp(1.65rem, 4vw + 0.85rem, 2.65rem);
-      line-height: 0.8;
-      letter-spacing: -0.02em;
-    }
-    .hero-brand-legal {
-      font-family: "Grift", "Segoe UI", system-ui, sans-serif;
-      font-weight: 300;
-      color: #0a0a0a;
-      /* clamp(MIN, IDEAL, MAX): pick IDEAL (scales with viewport), but never below MIN or above MAX */
-      font-size: clamp(1.2rem, 1.7vw + 0.85rem, 1.65rem);
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-      padding-left: 0.5em;
-    }
-    .hero-brand-tagline {
-      font-family: "Grift", "Segoe UI", system-ui, sans-serif;
-      font-weight: 100;
-      font-style: italic;
-      color: rgba(44, 44, 44, 0.72);
-      font-size: clamp(0.875rem, 1.1vw + 0.55rem, 1.05rem);
-      line-height: 0.8;
-      letter-spacing: 0.02em;
-      text-transform: lowercase;
-      padding-left: 1.5em;
-    }
-    .heading-rule {
-      border-bottom: 3px solid var(--accent-yellow);
-      padding-bottom: 0.2em;
-      display: inline-block;
-    }
-    main ul li::marker {
-      color: var(--bs-primary);
-    }
-    main strong {
-      color: var(--bs-primary);
-    }
-    main .alert strong {
-      color: inherit;
-    }
-    .site-subnav {
-      background: linear-gradient(180deg, #0d4aa8 0%, var(--bs-primary) 48%, #002f7a 100%);
-      border-bottom: 3px solid var(--accent-yellow);
-      box-shadow: 0 2px 8px rgba(0, 59, 154, 0.25);
-    }
-    .site-subnav a {
-      color: rgba(255, 255, 255, 0.95);
-      text-decoration: none;
-    }
-    .site-subnav a:hover {
-      color: #fff;
-      text-decoration: underline;
-      text-underline-offset: 0.2em;
-    }
-    .site-subnav a:focus-visible {
-      color: #fff;
-      outline: 2px solid var(--accent-yellow);
-      outline-offset: 3px;
-      border-radius: 2px;
-    }
-    .okr-list ul {
-      margin: 0.35em 0 0.75em 1rem;
-      padding-left: 1rem;
-    }
-    .okr-list > li {
-      margin-bottom: 1.25rem;
-    }
-    .scroll-target {
-      scroll-margin-top: 5rem;
-    }
-    main section h3 {
-      margin-top: 1.5rem;
-    }
-    main section h2 + h3 {
-      margin-top: 0.75rem;
-    }
-    main section h4 {
-      margin-top: 1rem;
-    }
-    .site-footer {
-      background: #e8ecf1;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/site.css" />
 </head>
 <body class="d-flex flex-column min-vh-100">
-  <nav class="site-subnav sticky-top z-3 py-3" aria-label="Page sections">
+  <nav class="site-subnav sticky-top z-3 py-3" aria-label="Main">
     <div class="container">
       <div class="d-flex flex-wrap justify-content-center gap-4 small">
-        <a class="fw-semibold" href="#vision">Vision</a>
-        <a class="fw-semibold" href="#mission">Mission</a>
-        <a class="fw-semibold" href="#okrs">OKRs</a>
-        <a class="fw-semibold" href="#leadership">Leadership</a>
+        <a class="fw-semibold" href="index.html#news" aria-current="page">News</a>
+        <a class="fw-semibold" href="index.html#upcoming-events">Upcoming Events</a>
+        <a class="fw-semibold" href="about-go.html">About Go</a>
+        <a class="fw-semibold" href="about.html">About Us</a>
       </div>
     </div>
   </nav>
@@ -237,199 +47,28 @@
   </header>
 
   <main class="container container-lg py-4 pb-5 flex-grow-1">
-    <section id="vision" class="scroll-target mb-5" aria-labelledby="vision-heading">
-      <h2 id="vision-heading" class="heading-rule fs-3 fw-bold text-primary mb-3">Vision</h2>
-
-      <h3 class="fs-5 text-primary fw-semibold">Vision statement</h3>
-      <p><strong>We envision the Philippine Go community united around the shared mission of establishing and nurturing groups, school clubs, and organizations and fostering relationships between them across the country, maintaining a strong, deep relationship with the international Go community, while playing and promoting Go in the spirit of sportsmanship, safety, inclusivity, fairness, and equality.</strong></p>
-
-      <h3 class="fs-5 text-primary fw-semibold">Vision statement (abbreviated)</h3>
-      <p><em>A united Philippine Go community that grows through new groups and connections, plays and promotes Go with sportsmanship and inclusion, and stays closely tied to the international Go community.</em></p>
-
-      <h3 class="fs-5 text-primary fw-semibold">Vision statement (structured)</h3>
-      <ul>
-        <li>We envision the <strong>Philippine Go community</strong> united around a <strong>shared mission</strong>.</li>
-        <li>That mission: <strong>establishing and nurturing</strong> groups, school clubs, and organizations and <strong>fostering relationships between them</strong> across the country.</li>
-        <li><strong>Maintaining</strong> a strong, deep relationship with the <strong>international Go community</strong>.</li>
-        <li><strong>Playing and promoting Go</strong> in the spirit of sportsmanship, safety, inclusivity, fairness, and equality.</li>
-      </ul>
-
-      <h3 class="fs-5 text-primary fw-semibold">Vision narrative</h3>
-      <p>A united community: groups, school clubs, and organizations in many places, aligned around the shared mission. We establish and nurture groups and communities—so we grow—and we foster relationships between them; we help schools jumpstart their own Go clubs. We play with respect, fairness, and goodwill and aim for a strong, deep relationship with the international Go community—with players who represent the Philippines.</p>
-
-      <h3 class="fs-5 text-primary fw-semibold">Key themes / pillars</h3>
-      <ul>
-        <li><strong>United community, shared mission</strong> — Groups, school clubs, and organizations moving together by choice.</li>
-        <li><strong>Groups, school clubs, and organizations</strong> — We establish and nurture groups and communities (including helping schools jumpstart their own Go clubs) and we foster relationships between them nationwide—so the community grows.</li>
-        <li><strong>Safety, inclusivity, fairness, and equality</strong> — We promote a safe environment; inclusivity—welcoming all groups, people, and places; fairness; and equality for all in the community.</li>
-        <li><strong>Sportsmanship</strong> — Play with respect, fairness, and goodwill.</li>
-        <li><strong>Strong, deep relationship with the international Go community</strong> — Learn, contribute, players represent the Philippines (e.g. IGF, AGF).</li>
-        <li><strong>Good governance</strong> — Clear structure and fair governance so the federation and communities thrive.</li>
-      </ul>
-
-      <h3 class="fs-5 text-primary fw-semibold">How the vision guides us</h3>
-      <ul>
-        <li><strong>Why we exist:</strong> united community → establish and nurture groups and communities, foster relationships between them, help schools jumpstart Go clubs → safety, inclusivity, fairness, equality, sportsmanship → <strong>strong internal ties</strong> and <strong>strong external ties</strong>.</li>
-        <li><strong>Strong internal ties</strong> — Among groups, school clubs, and organizations across the Philippines; we establish, nurture, and connect them so the community grows together.</li>
-        <li><strong>Strong external ties</strong> — With the international Go community (e.g. IGF, AGF); we learn, contribute, and have players represent the Philippines.</li>
-        <li>Decisions support that unity and the shared mission—not division. Tactics and metrics live in Mission and OKRs.</li>
-      </ul>
+    <section id="news" class="news-section scroll-target mb-5" aria-labelledby="news-heading">
+      <h2 id="news-heading" class="heading-rule fs-3 fw-bold mb-3">News</h2>
+      <p>Announcements and updates from GoPinas will appear here. Check back soon or reach out through <a class="content-link" href="about.html#leadership">our contacts on About Us</a>.</p>
     </section>
 
-    <section id="mission" class="scroll-target mb-5" aria-labelledby="mission-heading">
-      <h2 id="mission-heading" class="heading-rule fs-3 fw-bold text-primary mb-3">Mission</h2>
-      <p>GoPinas promotes and develops Go in the Philippines through a fair, inclusive, nationally coordinated approach. We establish and support groups, school clubs, organizations, and players; we promote sportsmanship, fairness, equality, inclusivity, and safety; and we work toward the vision.</p>
-      <p><strong>We do this by:</strong></p>
-      <ul>
-        <li><strong>Establishing and supporting groups, school clubs, organizations, and players</strong> — Establish and support groups, school clubs, organizations, and players so the community grows; <strong>fostering relationships</strong> between them. We help schools jumpstart their own Go clubs.</li>
-        <li><strong>Community-building and roadshows</strong> — workshops, meet-ups, events; taking Go to regions and cities (intros, demos, outreach).</li>
-        <li><strong>Tournaments, seminars, workshops</strong> — competitive play and learning, paid and free, in a spirit of respect and fair play.</li>
-        <li><strong>Fair, inclusive representation</strong> — groups, school clubs, and organizations have a voice; governance supports the whole community.</li>
-        <li><strong>Engaging the international Go community</strong> — International Go Federation (IGF), Asian Go Federation (AGF); players representing the Philippines.</li>
-      </ul>
-    </section>
-
-    <section id="okrs" class="scroll-target mb-5" aria-labelledby="okrs-heading">
-      <h2 id="okrs-heading" class="heading-rule fs-3 fw-bold text-primary mb-3">OKRs</h2>
-      <div class="alert alert-primary mb-3" role="alert"><strong>Work in progress.</strong> These OKRs are draft and may be updated.</div>
-      <p>We use <strong>Objectives and Key Results (OKRs)</strong> to set and track yearly priorities. When writing OKRs, we use the <strong>SMART</strong> approach: each objective and key result is <strong>S</strong>pecific, <strong>M</strong>easurable, <strong>A</strong>chievable, <strong>R</strong>elevant, and <strong>T</strong>ime-bound.</p>
-      <h3 class="fs-5 text-primary fw-semibold">OKRs 2026</h3>
-      <p><strong>Categories:</strong> Foundation · Member Services · Community Building · Tournaments · Administrative · Others</p>
-      <p>Objectives are grouped by primary focus per quarter; progress on an objective can continue across quarters.</p>
-
-      <h4 class="fs-6 text-primary fw-semibold">Q1 (Jan–Mar) — Foundation</h4>
-      <p>Membership process, KPIs/SLAs, online channel; officers, departments; marketing.</p>
-      <ul class="okr-list">
-        <li><strong>O1: Member organizations and structure</strong> <em>(Foundation)</em><br />Objective: Member organizations are properly registered and the federation has a clear, fair membership structure.
-          <ul>
-            <li>KR 1.1: At least 5 organizations or groups are registered as members of GoPinas by end of Q1 2026.</li>
-            <li>KR 1.2: A simple membership process (criteria and how to join) is documented and published by end of Q1 2026.</li>
-          </ul>
-        </li>
-        <li><strong>O2: Organizational KPIs and SLAs</strong> <em>(Administrative)</em><br />Objective: GoPinas has a small set of organizational KPIs and SLAs so we can measure and improve how we serve members and the community.
-          <ul>
-            <li>KR 2.1: A first set of organizational KPIs is defined and documented by end of Q1 2026 (e.g. 3–5 KPIs — membership growth, event count, response time, or other agreed metrics).</li>
-            <li>KR 2.2: At least 5 SLAs or service commitments are defined and published by end of Q1 2026 (e.g. response time for member inquiries, turnaround for rank requests, or event support).</li>
-          </ul>
-        </li>
-        <li><strong>O3: Online community</strong> <em>(Member Services)</em><br />Objective: GoPinas has a visible, maintained online community where players can connect, get information, and participate.
-          <ul>
-            <li>KR 3.1: At least 2 online community channels are established and active by end of Q1 2026 (e.g. Discord server, Facebook group, forum, or mailing list).</li>
-          </ul>
-        </li>
-        <li><strong>O4: Establish officers</strong> <em>(Foundation)</em><br />Objective: GoPinas has a clear set of officers with defined roles and responsibilities.
-          <ul>
-            <li>KR 4.1: Officers are elected or appointed and their roles are documented by end of Q1 2026.</li>
-            <li>KR 4.2: A simple list of officers and contact (or how to reach them) is published by end of Q1 2026.</li>
-          </ul>
-        </li>
-        <li><strong>O5: Establish departments</strong> <em>(Foundation)</em><br />Objective: GoPinas has established departments (or equivalent structure) to carry out key functions.
-          <ul>
-            <li>KR 5.1: Departments are defined and their scope/responsibilities are documented by end of Q1 2026.</li>
-            <li>KR 5.2: All founding departments are established by end of Q1 2026 (e.g. membership, events, communications, finance).</li>
-          </ul>
-        </li>
-        <li><strong>O6: Marketing</strong> <em>(Foundation)</em><br />Objective: GoPinas has a clear marketing direction and initial thrusts to promote Go and the federation.
-          <ul>
-            <li>KR 6.1: A short marketing plan or set of marketing thrusts is documented by end of Q1 2026.</li>
-            <li>KR 6.2: At least [N] marketing channels or tactics are identified and activated by end of Q1 2026 (e.g. social media, events, partnerships).</li>
-          </ul>
-        </li>
-      </ul>
-
-      <h4 class="fs-6 text-primary fw-semibold">Q2 (Apr–Jun) — Outreach and funding</h4>
-      <p>Schools, city/region meetups, sponsors, fund-raising, get-togethers, member IDs.</p>
-      <ul class="okr-list">
-        <li><strong>O7: Schools and youth outreach</strong> <em>(Community Building)</em><br />Objective: We make Go relatable and interesting to the uninitiated and the untapped market (including through schools and youth). More schools are aware of Go and have a path to start or grow a Go club.
-          <ul>
-            <li>KR 7.1: At least [N] schools are reached out to (e.g. contact, visit, or workshop) in Q2 2026.</li>
-            <li>KR 7.2 (stretch): At least one school has an active or jumpstarted Go club by end of Q2 2026.</li>
-            <li>KR 7.3: A short approach or messaging for making Go relatable and interesting to the uninitiated is documented or piloted by end of Q2 2026.</li>
-          </ul>
-        </li>
-        <li><strong>O8: Meetups and presence (city and region)</strong> <em>(Community Building)</em><br />Objective: Regular meetups exist at both city and region level so players can connect.
-          <ul>
-            <li>KR 8.1: At least [N] city-level meetups are initiated or supported in Q2 2026.</li>
-            <li>KR 8.2: At least [N] region-level meetups or events are initiated or supported in Q2 2026.</li>
-          </ul>
-        </li>
-        <li><strong>O9: Sponsors</strong> <em>(Administrative)</em><br />Objective: GoPinas has a clear approach to sponsors and secures at least some sponsor support to sustain activities.
-          <ul>
-            <li>KR 9.1: A simple sponsor policy or one-pager is documented by end of Q2 2026 (what we offer sponsors, tiers or options, how to get in touch).</li>
-            <li>KR 9.2: At least [N] sponsors are secured (e.g. in-kind or cash) by end of Q2 2026.</li>
-          </ul>
-        </li>
-        <li><strong>O10: Fund-raising events</strong> <em>(Administrative)</em><br />Objective: Fund-raising events are run in a planned, transparent way to support federation activities.
-          <ul>
-            <li>KR 10.1: At least [N] fund-raising event(s) are organized or co-organized by GoPinas in Q2 2026.</li>
-            <li>KR 10.2: A short guideline or process for how we run fund-raising events (e.g. purpose, accounting, transparency) is documented by end of Q2 2026.</li>
-          </ul>
-        </li>
-        <li><strong>O11: Get-together activities</strong> <em>(Community Building)</em><br />Objective: Players have regular, low-barrier get-togethers for social play and connection (distinct from formal tournaments or structured meetups).
-          <ul>
-            <li>KR 11.1: At least [N] get-together activities (e.g. casual play, social sessions, coffee-and-Go) are organized or supported by GoPinas or member groups in Q2 2026.</li>
-            <li>KR 11.2 (optional): Get-togethers are listed or promoted in a simple way (e.g. calendar, recurring announcement) by end of Q2 2026 so players can find them.</li>
-          </ul>
-        </li>
-        <li><strong>O15: Printing of individual member IDs</strong> <em>(Member Services)</em><br />Objective: Members can receive a printed individual member ID (card or similar) as part of their membership.
-          <ul>
-            <li>KR 15.1: A design and process for individual member IDs (e.g. card format, content, how to request or print) is documented by end of Q2 2026.</li>
-            <li>KR 15.2: At least [N] member IDs are printed and issued (or the capability to print on request is in place) by end of Q2 2026.</li>
-          </ul>
-        </li>
-      </ul>
-
-      <h4 class="fs-6 text-primary fw-semibold">Q3 (Jul–Sep) — Events and inclusion</h4>
-      <p>Tournaments, rank process, rank-accrediting events, international representation.</p>
-      <ul class="okr-list">
-        <li><strong>O12: Tournaments and play</strong> <em>(Tournaments)</em><br />Objective: Players have opportunities to play in organized, fair tournaments.
-          <ul>
-            <li>KR 12.1: GoPinas organizes or supports at least [N] tournaments in Q3 2026.</li>
-            <li>KR 12.2: At least one tournament in Q3 2026 uses clear rules and a spirit of respect and fair play (e.g. short code of conduct or guidelines published or shared with participants).</li>
-          </ul>
-        </li>
-        <li><strong>O13: Go rank of member players</strong> <em>(Member Services)</em><br />Objective: Member players can obtain or record an official (or federation-recognized) Go rank.
-          <ul>
-            <li>KR 13.1: A process for how member players can get or record their Go rank is documented by end of Q3 2026 (e.g. via IGF/AGF system or a local system we define).</li>
-            <li>KR 13.2 (stretch): At least [N] member players have a recorded rank (or have been supported to apply for one) by end of Q3 2026.</li>
-          </ul>
-        </li>
-        <li><strong>O14: Rank accreditation through tournaments</strong> <em>(Member Services)</em><br />Objective: Players can earn or progress in rank through accredited tournaments (recognized by GoPinas and/or international bodies).
-          <ul>
-            <li>KR 14.1: A clear process for how tournaments contribute to rank accreditation is documented by end of Q3 2026 (e.g. which events count, how results are submitted, link to IGF/AGF or local system).</li>
-            <li>KR 14.2: At least [N] tournament(s) in Q3 2026 are run or recognized as rank-accrediting (or a pilot is completed).</li>
-          </ul>
-        </li>
-        <li><strong>O16: International tournaments</strong> <em>(Tournaments)</em><br />Objective: GoPinas can select and support players who represent the Philippines in international tournaments (e.g. IGF/AGF events).
-          <ul>
-            <li>KR 16.1: A clear process for selecting representing players for international tournaments is documented by end of Q3 2026 (e.g. criteria, nomination, decision, communication).</li>
-            <li>KR 16.2: At least [N] representing player(s) are selected and supported (e.g. registration, coordination, logistics or funding where applicable) for an international tournament in 2026.</li>
-          </ul>
-        </li>
-      </ul>
-
-      <h4 class="fs-6 text-primary fw-semibold">Q4 (Oct–Dec) — Consolidation</h4>
-      <p>All objectives. Close year-end KRs, report on 2026, and plan for 2027.</p>
-    </section>
-
-    <section id="leadership" class="scroll-target mb-5" aria-labelledby="leadership-heading">
-      <h2 id="leadership-heading" class="heading-rule fs-3 fw-bold text-primary mb-3">Leadership</h2>
-      <ul class="list-unstyled mb-0">
-        <li class="mb-3">
-          <span class="fw-bold text-primary">Bryan Chug</span> — President, Chairman of the Board of Trustees<br />
-          <a class="link-primary text-decoration-none" href="mailto:bryan.chug@gofed.ph">bryan.chug@gofed.ph</a>
-        </li>
-        <li>
-          <span class="fw-bold text-primary">Celeste Abat</span> — Vice President, Trustee<br />
-          <a class="link-primary text-decoration-none" href="mailto:celeste.abat@gofed.ph">celeste.abat@gofed.ph</a>
-        </li>
-      </ul>
+    <section id="upcoming-events" class="upcoming-events-section scroll-target mb-5" aria-labelledby="upcoming-events-heading">
+      <h2 id="upcoming-events-heading" class="heading-rule fs-3 fw-bold mb-3">Upcoming Events</h2>
+      <p>Upcoming dates, venues, and registration will be posted here. Check back soon or reach out through <a class="content-link" href="about.html#leadership">our contacts on About Us</a> for the latest.</p>
     </section>
   </main>
 
-  <footer class="site-footer border-top border-2 border-primary mt-auto">
-    <div class="container container-lg py-4 text-center small text-secondary">
-      <p class="mb-0"><strong class="text-primary">Go Federation of the Philippines, Inc.</strong></p>
+  <footer class="site-footer mt-auto" aria-label="Site footer">
+    <div class="container container-lg site-footer-inner py-4 py-md-5 text-center">
+      <p class="site-footer-brand mb-3 mb-md-4 fw-semibold">Go Federation of the Philippines, Inc.</p>
+      <nav class="site-footer-nav d-flex flex-wrap justify-content-center column-gap-3 row-gap-2 small mb-3 mb-md-4" aria-label="Footer">
+        <a href="index.html#news">News</a>
+        <a href="index.html#upcoming-events">Upcoming Events</a>
+        <a href="about-go.html">About Go</a>
+        <a href="about.html">About Us</a>
+        <a href="press-kit.html">Press Kit</a>
+      </nav>
+      <p class="site-footer-copy mb-0 small">© 2026 All rights reserved.</p>
     </div>
   </footer>
 </body>
