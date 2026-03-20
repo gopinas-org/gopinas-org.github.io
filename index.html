@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Go Federation of the Philippines — GoFedPH</title>
+  <title>GoPinas!</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
   <style>
     :root {
@@ -11,7 +11,7 @@
       --bs-primary-rgb: 0, 59, 154;
       --bs-secondary: #fab51a;
       --bs-secondary-rgb: 250, 181, 26;
-      --bs-body-bg: #f5f0e6;
+      --bs-body-bg: #f4f6f9;
       --bs-body-color: #2c2c2c;
       --bs-link-color: #003b9a;
       --bs-link-hover-color: #002a6e;
@@ -22,27 +22,17 @@
     }
     body {
       font-family: "Segoe UI", system-ui, sans-serif;
+      background-color: var(--bs-body-bg);
       background-image:
-        radial-gradient(circle at 2em 2em, rgba(0, 59, 154, 0.06) 1px, transparent 1px),
-        radial-gradient(circle at 2em 2em, rgba(0, 59, 154, 0.06) 1px, transparent 1px);
+        radial-gradient(circle at 2em 2em, rgba(0, 59, 154, 0.05) 1px, transparent 1px),
+        radial-gradient(circle at 2em 2em, rgba(0, 59, 154, 0.05) 1px, transparent 1px);
       background-size: 3em 3em;
       background-position: 0 0, 1.5em 1.5em;
     }
     .hero {
-      /* Distinct from body: soft blue → cream diagonal, light gold + blue glows (logo stays readable). */
-      background:
-        radial-gradient(ellipse 90% 55% at 50% -15%, rgba(255, 255, 255, 0.85) 0%, transparent 55%),
-        radial-gradient(ellipse 70% 60% at 100% 0%, rgba(250, 181, 26, 0.18) 0%, transparent 55%),
-        radial-gradient(ellipse 65% 50% at 0% 100%, rgba(0, 59, 154, 0.1) 0%, transparent 55%),
-        linear-gradient(
-          168deg,
-          #eef3fb 0%,
-          #e8ecf4 38%,
-          #f2ebe3 72%,
-          var(--bs-body-bg) 100%
-        );
+      background: #fff;
       border-bottom: 2px solid var(--bs-primary);
-      box-shadow: inset 0 -1px 0 rgba(250, 181, 26, 0.45);
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
     }
     .hero-logo {
       max-width: min(100%, 28rem);
@@ -63,11 +53,24 @@
       color: inherit;
     }
     .site-subnav {
-      background: rgba(245, 240, 230, 0.97);
-      backdrop-filter: blur(4px);
+      background: linear-gradient(180deg, #0d4aa8 0%, var(--bs-primary) 48%, #002f7a 100%);
+      border-bottom: 3px solid var(--accent-yellow);
+      box-shadow: 0 2px 8px rgba(0, 59, 154, 0.25);
+    }
+    .site-subnav a {
+      color: rgba(255, 255, 255, 0.95);
+      text-decoration: none;
     }
     .site-subnav a:hover {
+      color: #fff;
       text-decoration: underline;
+      text-underline-offset: 0.2em;
+    }
+    .site-subnav a:focus-visible {
+      color: #fff;
+      outline: 2px solid var(--accent-yellow);
+      outline-offset: 3px;
+      border-radius: 2px;
     }
     .okr-list ul {
       margin: 0.35em 0 0.75em 1rem;
@@ -89,7 +92,7 @@
       margin-top: 1rem;
     }
     .site-footer {
-      background: rgba(245, 240, 230, 0.5);
+      background: #e8ecf1;
     }
   </style>
 </head>
@@ -105,17 +108,17 @@
         decoding="async"
       />
       <h1 class="heading-rule display-6 fw-bold text-primary mb-2">Go Federation of the Philippines</h1>
-      <p class="lead text-body-secondary mb-0">Vision, mission, and strategic direction — GoFedPH</p>
+      <p class="lead text-body-secondary mb-0">Vision, mission, and strategic direction — GoPinas!</p>
     </div>
   </header>
 
-  <nav class="site-subnav sticky-top z-3 border-bottom border-2 border-primary py-3" aria-label="Page sections">
+  <nav class="site-subnav sticky-top z-3 py-3" aria-label="Page sections">
     <div class="container">
-      <div class="d-flex flex-wrap justify-content-center gap-3 small">
-        <a class="link-primary fw-semibold text-decoration-none" href="#vision">Vision</a>
-        <a class="link-primary fw-semibold text-decoration-none" href="#mission">Mission</a>
-        <a class="link-primary fw-semibold text-decoration-none" href="#okrs">OKRs</a>
-        <a class="link-primary fw-semibold text-decoration-none" href="#leadership">Leadership</a>
+      <div class="d-flex flex-wrap justify-content-center gap-4 small">
+        <a class="fw-semibold" href="#vision">Vision</a>
+        <a class="fw-semibold" href="#mission">Mission</a>
+        <a class="fw-semibold" href="#okrs">OKRs</a>
+        <a class="fw-semibold" href="#leadership">Leadership</a>
       </div>
     </div>
   </nav>
@@ -162,7 +165,7 @@
 
     <section id="mission" class="scroll-target mb-5" aria-labelledby="mission-heading">
       <h2 id="mission-heading" class="heading-rule fs-3 fw-bold text-primary mb-3">Mission</h2>
-      <p>GoFedPH promotes and develops Go in the Philippines through a fair, inclusive, nationally coordinated approach. We establish and support groups, school clubs, organizations, and players; we promote sportsmanship, fairness, equality, inclusivity, and safety; and we work toward the vision.</p>
+      <p>GoPinas promotes and develops Go in the Philippines through a fair, inclusive, nationally coordinated approach. We establish and support groups, school clubs, organizations, and players; we promote sportsmanship, fairness, equality, inclusivity, and safety; and we work toward the vision.</p>
       <p><strong>We do this by:</strong></p>
       <ul>
         <li><strong>Establishing and supporting groups, school clubs, organizations, and players</strong> — Establish and support groups, school clubs, organizations, and players so the community grows; <strong>fostering relationships</strong> between them. We help schools jumpstart their own Go clubs.</li>
@@ -186,34 +189,34 @@
       <ul class="okr-list">
         <li><strong>O1: Member organizations and structure</strong> <em>(Foundation)</em><br />Objective: Member organizations are properly registered and the federation has a clear, fair membership structure.
           <ul>
-            <li>KR 1.1: At least 5 organizations or groups are registered as members of GoFedPH by end of Q1 2026.</li>
+            <li>KR 1.1: At least 5 organizations or groups are registered as members of GoPinas by end of Q1 2026.</li>
             <li>KR 1.2: A simple membership process (criteria and how to join) is documented and published by end of Q1 2026.</li>
           </ul>
         </li>
-        <li><strong>O2: Organizational KPIs and SLAs</strong> <em>(Administrative)</em><br />Objective: GoFedPH has a small set of organizational KPIs and SLAs so we can measure and improve how we serve members and the community.
+        <li><strong>O2: Organizational KPIs and SLAs</strong> <em>(Administrative)</em><br />Objective: GoPinas has a small set of organizational KPIs and SLAs so we can measure and improve how we serve members and the community.
           <ul>
             <li>KR 2.1: A first set of organizational KPIs is defined and documented by end of Q1 2026 (e.g. 3–5 KPIs — membership growth, event count, response time, or other agreed metrics).</li>
             <li>KR 2.2: At least 5 SLAs or service commitments are defined and published by end of Q1 2026 (e.g. response time for member inquiries, turnaround for rank requests, or event support).</li>
           </ul>
         </li>
-        <li><strong>O3: Online community</strong> <em>(Member Services)</em><br />Objective: GoFedPH has a visible, maintained online community where players can connect, get information, and participate.
+        <li><strong>O3: Online community</strong> <em>(Member Services)</em><br />Objective: GoPinas has a visible, maintained online community where players can connect, get information, and participate.
           <ul>
             <li>KR 3.1: At least 2 online community channels are established and active by end of Q1 2026 (e.g. Discord server, Facebook group, forum, or mailing list).</li>
           </ul>
         </li>
-        <li><strong>O4: Establish officers</strong> <em>(Foundation)</em><br />Objective: GoFedPH has a clear set of officers with defined roles and responsibilities.
+        <li><strong>O4: Establish officers</strong> <em>(Foundation)</em><br />Objective: GoPinas has a clear set of officers with defined roles and responsibilities.
           <ul>
             <li>KR 4.1: Officers are elected or appointed and their roles are documented by end of Q1 2026.</li>
             <li>KR 4.2: A simple list of officers and contact (or how to reach them) is published by end of Q1 2026.</li>
           </ul>
         </li>
-        <li><strong>O5: Establish departments</strong> <em>(Foundation)</em><br />Objective: GoFedPH has established departments (or equivalent structure) to carry out key functions.
+        <li><strong>O5: Establish departments</strong> <em>(Foundation)</em><br />Objective: GoPinas has established departments (or equivalent structure) to carry out key functions.
           <ul>
             <li>KR 5.1: Departments are defined and their scope/responsibilities are documented by end of Q1 2026.</li>
             <li>KR 5.2: All founding departments are established by end of Q1 2026 (e.g. membership, events, communications, finance).</li>
           </ul>
         </li>
-        <li><strong>O6: Marketing</strong> <em>(Foundation)</em><br />Objective: GoFedPH has a clear marketing direction and initial thrusts to promote Go and the federation.
+        <li><strong>O6: Marketing</strong> <em>(Foundation)</em><br />Objective: GoPinas has a clear marketing direction and initial thrusts to promote Go and the federation.
           <ul>
             <li>KR 6.1: A short marketing plan or set of marketing thrusts is documented by end of Q1 2026.</li>
             <li>KR 6.2: At least [N] marketing channels or tactics are identified and activated by end of Q1 2026 (e.g. social media, events, partnerships).</li>
@@ -237,7 +240,7 @@
             <li>KR 8.2: At least [N] region-level meetups or events are initiated or supported in Q2 2026.</li>
           </ul>
         </li>
-        <li><strong>O9: Sponsors</strong> <em>(Administrative)</em><br />Objective: GoFedPH has a clear approach to sponsors and secures at least some sponsor support to sustain activities.
+        <li><strong>O9: Sponsors</strong> <em>(Administrative)</em><br />Objective: GoPinas has a clear approach to sponsors and secures at least some sponsor support to sustain activities.
           <ul>
             <li>KR 9.1: A simple sponsor policy or one-pager is documented by end of Q2 2026 (what we offer sponsors, tiers or options, how to get in touch).</li>
             <li>KR 9.2: At least [N] sponsors are secured (e.g. in-kind or cash) by end of Q2 2026.</li>
@@ -245,13 +248,13 @@
         </li>
         <li><strong>O10: Fund-raising events</strong> <em>(Administrative)</em><br />Objective: Fund-raising events are run in a planned, transparent way to support federation activities.
           <ul>
-            <li>KR 10.1: At least [N] fund-raising event(s) are organized or co-organized by GoFedPH in Q2 2026.</li>
+            <li>KR 10.1: At least [N] fund-raising event(s) are organized or co-organized by GoPinas in Q2 2026.</li>
             <li>KR 10.2: A short guideline or process for how we run fund-raising events (e.g. purpose, accounting, transparency) is documented by end of Q2 2026.</li>
           </ul>
         </li>
         <li><strong>O11: Get-together activities</strong> <em>(Community Building)</em><br />Objective: Players have regular, low-barrier get-togethers for social play and connection (distinct from formal tournaments or structured meetups).
           <ul>
-            <li>KR 11.1: At least [N] get-together activities (e.g. casual play, social sessions, coffee-and-Go) are organized or supported by GoFedPH or member groups in Q2 2026.</li>
+            <li>KR 11.1: At least [N] get-together activities (e.g. casual play, social sessions, coffee-and-Go) are organized or supported by GoPinas or member groups in Q2 2026.</li>
             <li>KR 11.2 (optional): Get-togethers are listed or promoted in a simple way (e.g. calendar, recurring announcement) by end of Q2 2026 so players can find them.</li>
           </ul>
         </li>
@@ -268,7 +271,7 @@
       <ul class="okr-list">
         <li><strong>O12: Tournaments and play</strong> <em>(Tournaments)</em><br />Objective: Players have opportunities to play in organized, fair tournaments.
           <ul>
-            <li>KR 12.1: GoFedPH organizes or supports at least [N] tournaments in Q3 2026.</li>
+            <li>KR 12.1: GoPinas organizes or supports at least [N] tournaments in Q3 2026.</li>
             <li>KR 12.2: At least one tournament in Q3 2026 uses clear rules and a spirit of respect and fair play (e.g. short code of conduct or guidelines published or shared with participants).</li>
           </ul>
         </li>
@@ -278,13 +281,13 @@
             <li>KR 13.2 (stretch): At least [N] member players have a recorded rank (or have been supported to apply for one) by end of Q3 2026.</li>
           </ul>
         </li>
-        <li><strong>O14: Rank accreditation through tournaments</strong> <em>(Member Services)</em><br />Objective: Players can earn or progress in rank through accredited tournaments (recognized by GoFedPH and/or international bodies).
+        <li><strong>O14: Rank accreditation through tournaments</strong> <em>(Member Services)</em><br />Objective: Players can earn or progress in rank through accredited tournaments (recognized by GoPinas and/or international bodies).
           <ul>
             <li>KR 14.1: A clear process for how tournaments contribute to rank accreditation is documented by end of Q3 2026 (e.g. which events count, how results are submitted, link to IGF/AGF or local system).</li>
             <li>KR 14.2: At least [N] tournament(s) in Q3 2026 are run or recognized as rank-accrediting (or a pilot is completed).</li>
           </ul>
         </li>
-        <li><strong>O16: International tournaments</strong> <em>(Tournaments)</em><br />Objective: GoFedPH can select and support players who represent the Philippines in international tournaments (e.g. IGF/AGF events).
+        <li><strong>O16: International tournaments</strong> <em>(Tournaments)</em><br />Objective: GoPinas can select and support players who represent the Philippines in international tournaments (e.g. IGF/AGF events).
           <ul>
             <li>KR 16.1: A clear process for selecting representing players for international tournaments is documented by end of Q3 2026 (e.g. criteria, nomination, decision, communication).</li>
             <li>KR 16.2: At least [N] representing player(s) are selected and supported (e.g. registration, coordination, logistics or funding where applicable) for an international tournament in 2026.</li>
