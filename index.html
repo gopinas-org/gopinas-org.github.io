@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" href="/assets/favicon-16.png" sizes="16x16" />
   <link rel="icon" type="image/png" href="/assets/favicon-192.png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="preload" as="image" href="assets/hero-go-kids.png?v=8" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
   <style>
     @font-face {
@@ -15,6 +16,13 @@
       src: url("assets/Grift-Light.woff2") format("woff2");
       font-weight: 300;
       font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Grift";
+      src: url("assets/Grift-BoldItalic.woff2") format("woff2");
+      font-weight: 700;
+      font-style: italic;
       font-display: swap;
     }
     :root {
@@ -41,27 +49,81 @@
       background-position: 0 0, 1.5em 1.5em;
     }
     .hero {
-      background: #fff;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      background-color: #e8edf5;
+      background-image: url("assets/hero-go-kids.png?v=8");
+      background-size: cover;
+      background-position: center 44%;
+      background-repeat: no-repeat;
       border-bottom: 2px solid var(--bs-primary);
-      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+      box-shadow:
+        0 4px 24px rgba(0, 59, 154, 0.07),
+        0 1px 0 rgba(255, 255, 255, 0.9) inset;
+      min-height: clamp(340px, 52vh, 640px);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(251, 252, 254, 0.96) 0%,
+          rgba(251, 252, 254, 0.88) 32%,
+          rgba(251, 252, 254, 0.45) 55%,
+          transparent 78%
+        ),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, transparent 42%),
+        radial-gradient(ellipse 100% 70% at 12% 0%, rgba(0, 59, 154, 0.07), transparent 52%),
+        radial-gradient(ellipse 80% 60% at 100% 100%, rgba(250, 181, 26, 0.09), transparent 50%);
+      pointer-events: none;
+    }
+    .hero .container {
+      position: relative;
+      z-index: 1;
+      align-self: stretch;
+      width: 100%;
     }
     .hero-brand {
       font-size: clamp(1.5em, 4vw + 1rem, 3em);
       gap: 0.2em !important;
+    }
+    .hero-brand-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      min-width: 0;
     }
     .hero-logo {
       max-height: 3.5em;
       width: auto;
       max-width: 100%;
       height: auto;
-      filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.08));
+      filter: drop-shadow(0 2px 10px rgba(0, 59, 154, 0.15));
     }
     .hero-brand-name {
       font-family: "Grift", "Segoe UI", system-ui, sans-serif;
       font-weight: 300;
-      color: #000;
+      color: #0a0a0a;
       font-size: 1em;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+    .hero-tagline {
+      font-family: "Grift", "Segoe UI", system-ui, sans-serif;
+      font-weight: 700;
+      font-style: italic;
+      color: rgba(44, 44, 44, 0.72);
+      letter-spacing: 0.02em;
+      font-size: max(0.8125rem, 0.42em);
       line-height: 1.2;
+      margin-top: 0.02em;
     }
     .heading-rule {
       border-bottom: 3px solid var(--accent-yellow);
@@ -133,10 +195,10 @@
     </div>
   </nav>
 
-  <header class="hero py-4 py-lg-5 px-3">
+  <header class="hero py-2 py-lg-3 px-3">
     <div class="container text-start">
       <h1 class="visually-hidden">GoPinas!</h1>
-      <div class="hero-brand d-flex flex-column flex-md-row align-items-md-center mb-3 mb-md-4">
+      <div class="hero-brand d-flex flex-column flex-md-row align-items-start align-items-md-center mb-2 mb-md-3">
         <img
           class="hero-logo img-fluid flex-shrink-0"
           src="assets/logo-mark.png"
@@ -146,9 +208,11 @@
           role="presentation"
           decoding="async"
         />
-        <p class="hero-brand-name mb-0">Go Federation of the Philippines</p>
+        <div class="hero-brand-text">
+          <p class="hero-brand-name mb-0">Go Federation of the Philippines</p>
+          <p class="hero-tagline mb-0">GoPinas! - growing stronger together</p>
+        </div>
       </div>
-      <p class="lead text-body-secondary mb-0">Vision, mission, and strategic direction — GoPinas!</p>
     </div>
   </header>
 
