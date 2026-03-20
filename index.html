@@ -15,8 +15,6 @@
       --bs-body-color: #2c2c2c;
       --bs-link-color: #003b9a;
       --bs-link-hover-color: #002a6e;
-      --blue-gradient-dark: #002a6e;
-      --blue-gradient-light: #0050c8;
       --accent-yellow: #fab51a;
     }
     html {
@@ -31,18 +29,18 @@
       background-position: 0 0, 1.5em 1.5em;
     }
     .hero {
+      background-color: var(--bs-body-bg);
       background-image:
-        linear-gradient(160deg, var(--bs-primary) 0%, var(--blue-gradient-light) 50%, var(--blue-gradient-dark) 100%),
-        radial-gradient(circle at 20% 80%, rgba(250, 181, 26, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 40%);
-      background-size: 100% 100%, 100% 100%, 100% 100%;
+        radial-gradient(circle at 2em 2em, rgba(0, 59, 154, 0.06) 1px, transparent 1px),
+        radial-gradient(circle at 2em 2em, rgba(0, 59, 154, 0.06) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, transparent 40%);
+      background-size: 3em 3em, 3em 3em, 100% 100%;
+      background-position: 0 0, 1.5em 1.5em, 0 0;
+      border-bottom: 2px solid var(--bs-primary);
     }
     .hero-logo {
       max-width: min(100%, 28rem);
-      filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.25));
-    }
-    .hero .heading-rule {
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+      filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.08));
     }
     .heading-rule {
       border-bottom: 3px solid var(--accent-yellow);
@@ -90,7 +88,7 @@
   </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
-  <header class="hero text-center text-white py-5 px-3">
+  <header class="hero text-center py-5 px-3">
     <div class="container">
       <img
         class="hero-logo img-fluid d-block mx-auto mb-4"
@@ -100,8 +98,8 @@
         height="397"
         decoding="async"
       />
-      <h1 class="heading-rule display-6 fw-bold text-white mb-2">Go Federation of the Philippines</h1>
-      <p class="lead text-white mb-0 opacity-75">Vision, mission, and strategic direction — GoFedPH</p>
+      <h1 class="heading-rule display-6 fw-bold text-primary mb-2">Go Federation of the Philippines</h1>
+      <p class="lead text-body-secondary mb-0">Vision, mission, and strategic direction — GoFedPH</p>
     </div>
   </header>
 
