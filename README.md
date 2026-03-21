@@ -4,7 +4,7 @@ Public site for **Go Federation of the Philippines, Inc.** (GoPinas), built with
 
 ## Prerequisites
 
-- **Node.js** 20+ (LTS recommended)
+- **Node.js** 22.12+ (required by Astro 6; use current **22** or **24** LTS)
 
 ## Local development
 
