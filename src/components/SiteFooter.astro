@@ -1,0 +1,27 @@
+---
+interface Props {
+  pathname: string;
+}
+
+const { pathname } = Astro.props;
+const p = pathname.replace(/\/$/, '') || '/';
+const isPressKit = p === '/press-kit.html';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer mt-auto" aria-label="Site footer">
+  <div class="container container-lg site-footer-inner py-4 py-md-5 text-center">
+    <p class="site-footer-brand mb-3 mb-md-4 fw-semibold">Go Federation of the Philippines, Inc.</p>
+    <nav
+      class="site-footer-nav d-flex flex-wrap justify-content-center column-gap-3 row-gap-2 small mb-3 mb-md-4"
+      aria-label="Footer"
+    >
+      <a href="/#news">News</a>
+      <a href="/#upcoming-events">Upcoming Events</a>
+      <a href="/about-go.html">About Go</a>
+      <a href="/about.html">About Us</a>
+      <a href="/press-kit.html" aria-current={isPressKit ? 'page' : undefined}>Press Kit</a>
+    </nav>
+    <p class="site-footer-copy mb-0 small">© {year} All rights reserved.</p>
+  </div>
+</footer>

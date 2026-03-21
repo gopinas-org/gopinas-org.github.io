@@ -1,0 +1,25 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  ogImage?: string;
+  ogType?: string;
+}
+
+const { title, description, canonicalPath, ogImage, ogType = 'website' } = Astro.props;
+const site = Astro.site ?? new URL('https://gopinas.org/');
+const canonical = new URL(canonicalPath, site).href;
+const ogImageUrl = ogImage ? new URL(ogImage, site).href : undefined;
+---
+
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={canonical} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+{ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />

@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import { getCollection, render } from 'astro:content';
+import { formatDate } from '../../lib/formatDate';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('articles');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const description = post.data.excerpt ?? post.data.title;
+const ogImage = post.data.image;
+
+function linkHref(url: string) {
+  if (url.includes('://')) return url;
+  return url.startsWith('/') ? url : `/${url}`;
+}
+---
+
+<BaseLayout
+  title={`${post.data.title} | GoPinas`}
+  description={description}
+  canonicalPath={`/articles/${post.id}/`}
+  ogImage={ogImage}
+  ogType="article"
+>
+  <Hero variant="compact" />
+  <main class="container container-lg py-4 pb-5 flex-grow-1">
+    <article>
+      <header class="mb-4">
+        <h1 class="heading-rule fs-3 fw-bold mb-2">{post.data.title}</h1>
+        <p class="text-secondary small mb-0">
+          <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+        </p>
+      </header>
+      {
+        post.data.image && (
+          <figure class="article-thumb-figure mb-4">
+            <img
+              class="img-fluid rounded article-thumb-img"
+              src={post.data.image}
+              alt={post.data.image_alt ?? post.data.title}
+              width="1200"
+              height="630"
+              decoding="async"
+            />
+          </figure>
+        )
+      }
+      <div class="post-content">
+        <Content />
+      </div>
+      {
+        post.data.related_links && post.data.related_links.length > 0 && (
+          <section class="related-links mt-5 pt-4 border-top" aria-labelledby="related-links-heading">
+            <h2 id="related-links-heading" class="fs-5 fw-semibold mb-3">
+              Related links
+            </h2>
+            <ul class="mb-0">
+              {post.data.related_links.map((link) => (
+                <li class="mb-2">
+                  <a
+                    class="content-link"
+                    href={linkHref(link.url)}
+                    {...(link.url.includes('://') ? { rel: 'noopener noreferrer' } : {})}
+                  >
+                    {link.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
+    </article>
+  </main>
+</BaseLayout>

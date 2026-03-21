@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import PressKitBody from '../../components/PressKitBody.astro';
+
+const description =
+  'Press kit for Go Federation of the Philippines (GoPinas): logos, contacts, and quick facts.';
+---
+
+<BaseLayout title="GoPinas! — Press Kit" description={description} canonicalPath="/press-kit.html">
+  <Hero variant="compact" />
+  <PressKitBody />
+</BaseLayout>

@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import { getCollection } from 'astro:content';
+import { formatDate } from '../../lib/formatDate';
+
+const sorted = (await getCollection('articles')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout
+  title="Articles | GoPinas"
+  description="Long-form articles from Go Federation of the Philippines."
+  canonicalPath="/articles/"
+>
+  <Hero variant="compact" />
+  <main class="container container-lg py-4 pb-5 flex-grow-1">
+    <h1 class="heading-rule fs-3 fw-bold mb-3">Articles</h1>
+    <p class="small text-secondary mb-4">
+      Long-form pieces (not linked from the main site navigation). Share direct URLs to these pages.
+    </p>
+    {
+      sorted.length === 0 ? (
+        <p>No articles yet.</p>
+      ) : (
+        <ul class="list-unstyled mb-0">
+          {sorted.map((a) => (
+            <li class="mb-4">
+              <a class="fw-semibold" href={`/articles/${a.id}/`}>
+                {a.data.title}
+              </a>
+              <span class="text-secondary small"> — {formatDate(a.data.date)}</span>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </main>
+</BaseLayout>

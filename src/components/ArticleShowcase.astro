@@ -1,0 +1,47 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  articles: CollectionEntry<'articles'>[];
+}
+
+const { articles } = Astro.props;
+---
+
+{
+  articles.length > 0 && (
+    <section id="featured" class="article-showcase scroll-target mb-5" aria-labelledby="featured-heading">
+      <h2 id="featured-heading" class="heading-rule fs-3 fw-bold mb-3">
+        Featured articles
+      </h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {articles.map((a) => (
+          <div class="col">
+            <article class="card h-100 border-0 shadow-sm article-showcase-card">
+              {a.data.image && (
+                <div class="article-showcase-thumb-wrap">
+                  <img
+                    class="article-showcase-thumb"
+                    src={a.data.image}
+                    alt={a.data.image_alt ?? a.data.title}
+                    width="600"
+                    height="400"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              )}
+              <div class="card-body position-relative">
+                <h3 class="card-title fs-6 fw-semibold mb-0">
+                  <a class="stretched-link text-reset text-decoration-none" href={`/articles/${a.id}/`}>
+                    {a.data.title}
+                  </a>
+                </h3>
+              </div>
+            </article>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
