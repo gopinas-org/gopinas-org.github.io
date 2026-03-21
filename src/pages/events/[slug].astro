@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import { getCollection, render } from 'astro:content';
+import { formatDate } from '../../lib/formatDate';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('events');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const d = post.data;
+const description = d.location ? `${d.title} — ${d.location}` : d.title;
+---
+
+<BaseLayout
+  title={`${post.data.title} | GoPinas`}
+  description={description}
+  canonicalPath={`/events/${post.id}/`}
+>
+  <Hero variant="compact" />
+  <main class="container container-lg py-4 pb-5 flex-grow-1">
+    <article>
+      <header class="mb-4">
+        <h1 class="heading-rule fs-3 fw-bold mb-2">{post.data.title}</h1>
+        <p class="mb-1">
+          <strong>Date:</strong>
+          <time datetime={d.event_date.toISOString().slice(0, 10)}>{formatDate(d.event_date)}</time>
+          {
+            d.end_date && (
+              <>
+                {' '}
+                – <time datetime={d.end_date.toISOString().slice(0, 10)}>{formatDate(d.end_date)}</time>
+              </>
+            )
+          }
+        </p>
+        {d.location && <p class="mb-1"><strong>Location:</strong> {d.location}</p>}
+        {
+          d.registration_url && (
+            <p class="mb-0">
+              <a class="content-link" href={d.registration_url} rel="noopener noreferrer">
+                Registration / details
+              </a>
+            </p>
+          )
+        }
+      </header>
+      <div class="post-content">
+        <Content />
+      </div>
+    </article>
+  </main>
+</BaseLayout>

@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import { getCollection } from 'astro:content';
+import { formatDate } from '../../lib/formatDate';
+
+const sorted = (await getCollection('events')).sort((a, b) => b.data.event_date.valueOf() - a.data.event_date.valueOf());
+---
+
+<BaseLayout
+  title="Events | GoPinas"
+  description="Events from Go Federation of the Philippines."
+  canonicalPath="/events/"
+>
+  <Hero variant="compact" />
+  <main class="container container-lg py-4 pb-5 flex-grow-1">
+    <h1 class="heading-rule fs-3 fw-bold mb-4">Events</h1>
+    {
+      sorted.length === 0 ? (
+        <p>No events listed yet.</p>
+      ) : (
+        <ul class="list-unstyled mb-0">
+          {sorted.map((e) => (
+            <li class="mb-4">
+              <a class="fw-semibold" href={`/events/${e.id}/`}>
+                {e.data.title}
+              </a>
+              <span class="text-secondary small">
+                {' '}
+                — {formatDate(e.data.event_date)}
+                {e.data.location && ` · ${e.data.location}`}
+              </span>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </main>
+</BaseLayout>

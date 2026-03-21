@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import { getCollection } from 'astro:content';
+import { formatDate } from '../../lib/formatDate';
+
+const sorted = (await getCollection('news')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout
+  title="News | GoPinas"
+  description="News and announcements from Go Federation of the Philippines."
+  canonicalPath="/news/"
+>
+  <Hero variant="compact" />
+  <main class="container container-lg py-4 pb-5 flex-grow-1">
+    <h1 class="heading-rule fs-3 fw-bold mb-4">News</h1>
+    {
+      sorted.length === 0 ? (
+        <p>No news posts yet.</p>
+      ) : (
+        <ul class="list-unstyled mb-0">
+          {sorted.map((n) => (
+            <li class="mb-4">
+              <a class="fw-semibold" href={`/news/${n.id}/`}>
+                {n.data.title}
+              </a>
+              <span class="text-secondary small"> — {formatDate(n.data.date)}</span>
+              {n.data.excerpt && <p class="mb-0 mt-1">{n.data.excerpt}</p>}
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </main>
+</BaseLayout>

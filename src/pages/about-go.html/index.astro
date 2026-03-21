@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+
+const title = 'What is Go? weiqi, baduk & the game from China | GoPinas';
+const description =
+  'Go is a strategic board game that began in China, also known as weiqi (围棋) and baduk (바둑). Learn what Go is and how GoPinas supports players in the Philippines.';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalPath="/about-go.html"
+  jsonLdAboutGo
+>
+  <Hero variant="compact" />
+  <main class="container container-lg py-4 pb-5 flex-grow-1">
+    <article>
+      <h1 class="heading-rule fs-3 fw-bold mb-3" id="about-go-main">What is Go? (weiqi, baduk)</h1>
+      <p class="lead mb-4">
+        <strong>Go</strong> is a strategic board game for two players, played on a grid with black and white stones.
+        Simple rules lead to deep strategy; it is one of the world’s oldest games and is played worldwide.
+      </p>
+
+      <section class="mb-5" aria-labelledby="about-go-origins-heading">
+        <h2 id="about-go-origins-heading" class="fs-4 fw-semibold mb-3">Origins in China and names around the world</h2>
+        <p>
+          Go traces its roots to <strong>China</strong>, where it developed over thousands of years. In Chinese it is
+          called <strong>weiqi</strong> (<span lang="zh">围棋</span>, literally “surrounding game”). In Korea the same
+          game is known as <strong>baduk</strong> (<span lang="ko">바둑</span>). In Japan it is commonly called
+          <strong>igo</strong> or simply <strong>Go</strong>—the English word “Go” comes from the Japanese pronunciation
+          of the character 碁.
+        </p>
+        <p>
+          Whether you search for <em>weiqi</em>, <em>baduk</em>, or <em>Go</em>, you are learning the same game:
+          territory, influence, and reading ahead on the board.
+        </p>
+      </section>
+
+      <section class="mb-5" aria-labelledby="about-go-rules-heading">
+        <h2 id="about-go-rules-heading" class="fs-4 fw-semibold mb-3">How it is played (briefly)</h2>
+        <p>
+          Players take turns placing stones on the intersections of a grid—usually 19×19 for serious play, with smaller
+          boards for beginners. You surround empty points to score <strong>territory</strong> and can capture opposing
+          stones by removing their <strong>liberties</strong> (adjacent empty points). The game ends when both sides
+          pass; the higher score wins.
+        </p>
+      </section>
+
+      <section class="mb-5" aria-labelledby="about-go-gopinas-heading">
+        <h2 id="about-go-gopinas-heading" class="fs-4 fw-semibold mb-3">Go in the Philippines</h2>
+        <p>
+          <strong>Go Federation of the Philippines, Inc.</strong> (GoPinas) is the national federation for Go, weiqi,
+          and baduk in the Philippines—supporting clubs, events, and players nationwide. For our mission, vision, and
+          the team, see <a class="content-link" href="/about.html">About Us</a>.
+        </p>
+      </section>
+    </article>
+  </main>
+</BaseLayout>

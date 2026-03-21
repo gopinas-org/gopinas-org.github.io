@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import AboutToc from '../../components/AboutToc.astro';
+import Hero from '../../components/Hero.astro';
+import AboutPageBody from '../../components/AboutPageBody.astro';
+
+const description =
+  'Mission, vision, OKRs, and team contacts for Go Federation of the Philippines (GoPinas).';
+---
+
+<BaseLayout title="GoPinas! — About Us" description={description} canonicalPath="/about.html">
+  <AboutToc />
+  <Hero variant="compact" />
+  <AboutPageBody />
+</BaseLayout>
