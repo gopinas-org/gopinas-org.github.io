@@ -1,0 +1,10 @@
+---
+layout: default
+---
+{% if page.about_toc %}
+  {% include about-toc.html %}
+{% endif %}
+{% include hero.html type="compact" %}
+<main class="container container-lg py-4 pb-5 flex-grow-1">
+  {{ content }}
+</main>

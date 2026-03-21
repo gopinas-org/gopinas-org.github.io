@@ -1,0 +1,13 @@
+<footer class="site-footer mt-auto" aria-label="Site footer">
+  <div class="container container-lg site-footer-inner py-4 py-md-5 text-center">
+    <p class="site-footer-brand mb-3 mb-md-4 fw-semibold">Go Federation of the Philippines, Inc.</p>
+    <nav class="site-footer-nav d-flex flex-wrap justify-content-center column-gap-3 row-gap-2 small mb-3 mb-md-4" aria-label="Footer">
+      <a href="{{ '/' | relative_url }}#news">News</a>
+      <a href="{{ '/' | relative_url }}#upcoming-events">Upcoming Events</a>
+      <a href="{{ '/about-go.html' | relative_url }}">About Go</a>
+      <a href="{{ '/about.html' | relative_url }}">About Us</a>
+      <a href="{{ '/press-kit.html' | relative_url }}" {% if page.url == '/press-kit.html' %}aria-current="page"{% endif %}>Press Kit</a>
+    </nav>
+    <p class="site-footer-copy mb-0 small">© {{ site.time | date: '%Y' }} All rights reserved.</p>
+  </div>
+</footer>

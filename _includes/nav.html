@@ -1,0 +1,10 @@
+<nav class="site-subnav sticky-top z-3 py-3" aria-label="Main">
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-center gap-4 small">
+      <a class="fw-semibold" href="{{ '/' | relative_url }}#news" {% if page.url == '/' %}aria-current="page"{% endif %}>News</a>
+      <a class="fw-semibold" href="{{ '/' | relative_url }}#upcoming-events">Upcoming Events</a>
+      <a class="fw-semibold" href="{{ '/about-go.html' | relative_url }}" {% if page.url == '/about-go.html' %}aria-current="page"{% endif %}>About Go</a>
+      <a class="fw-semibold" href="{{ '/about.html' | relative_url }}" {% if page.url == '/about.html' %}aria-current="page"{% endif %}>About Us</a>
+    </div>
+  </div>
+</nav>

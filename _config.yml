@@ -1,0 +1,49 @@
+title: GoPinas
+description: >-
+  Go Federation of the Philippines — national federation for Go, weiqi, and baduk in the Philippines.
+url: "https://gopinas.org"
+baseurl: ""
+lang: en
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+feed:
+  collections:
+    - news
+
+collections:
+  news:
+    output: true
+    permalink: /news/:name/
+  articles:
+    output: true
+    permalink: /articles/:name/
+  events:
+    output: true
+    permalink: /events/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: news
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: articles
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: events
+    values:
+      layout: event
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - docs
