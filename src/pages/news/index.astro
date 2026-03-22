@@ -40,17 +40,17 @@ const sorted = (await getCollection('news')).sort((a, b) => b.data.date.valueOf(
                   <span class="d-block min-w-0 flex-grow-1">
                     <span class="d-block">
                       <span class="home-entry-link-title d-inline fw-semibold">{n.data.title}</span>
-                      <span class="text-secondary small"> — {formatDate(n.data.date)}</span>
+                      <span class="article-date small"> — {formatDate(n.data.date)}</span>
                     </span>
                     {n.data.excerpt && <p class="mb-0 mt-2 text-body small">{n.data.excerpt}</p>}
                   </span>
                 </a>
               ) : (
                 <>
-                  <a class="fw-semibold" href={`/news/${n.id}/`}>
+                  <a class="home-entry-link-title fw-semibold" href={`/news/${n.id}/`}>
                     {n.data.title}
                   </a>
-                  <span class="text-secondary small"> — {formatDate(n.data.date)}</span>
+                  <span class="article-date small"> — {formatDate(n.data.date)}</span>
                   {n.data.excerpt && <p class="mb-0 mt-1">{n.data.excerpt}</p>}
                 </>
               )}

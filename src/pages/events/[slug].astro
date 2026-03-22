@@ -35,7 +35,7 @@ const ogImage =
     <article>
       <header class="mb-4">
         <h1 class="heading-rule fs-3 fw-bold mb-2">{post.data.title}</h1>
-        <p class="mb-1">
+        <p class="article-date small mb-1">
           <strong>Date:</strong>
           <time datetime={d.event_date.toISOString().slice(0, 10)}>{formatDate(d.event_date)}</time>
           {

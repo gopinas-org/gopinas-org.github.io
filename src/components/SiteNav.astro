@@ -1,4 +1,7 @@
 ---
+import CdnImage from './CdnImage.astro';
+import { LOGO_MARK_URL } from '../config/media';
+
 interface Props {
   pathname: string;
 }
@@ -10,9 +13,28 @@ const isAboutGo = p === '/about-go.html';
 const isAbout = p === '/about.html';
 ---
 
-<nav class="site-subnav sticky-top z-3 py-3" aria-label="Main">
-  <div class="container">
-    <div class="d-flex flex-wrap justify-content-center gap-4 small">
+<nav class="site-subnav sticky-top z-3 py-3" aria-label="Main" data-site-subnav>
+  <div class="container position-relative">
+    <a
+      class="site-subnav-compact-logo"
+      id="site-subnav-compact-logo"
+      href="/"
+      aria-label="GoPinas home"
+      aria-hidden="true"
+      tabindex="-1"
+    >
+      <CdnImage
+        src={LOGO_MARK_URL}
+        alt=""
+        width={48}
+        height={48}
+        crop="fill"
+        class="site-subnav-compact-logo-img"
+        loading="lazy"
+      />
+      <span class="site-subnav-compact-wordmark">GoPinas!</span>
+    </a>
+    <div class="site-subnav-links d-flex flex-wrap justify-content-center gap-4 small">
       <a class="fw-semibold" href="/#news" aria-current={isHome ? 'page' : undefined}>News</a>
       <a class="fw-semibold" href="/#upcoming-events">Upcoming Events</a>
       <a class="fw-semibold" href="/about-go.html" aria-current={isAboutGo ? 'page' : undefined}>About Go</a>
@@ -20,3 +42,43 @@ const isAbout = p === '/about.html';
     </div>
   </div>
 </nav>
+
+<script is:inline>
+  (function () {
+    function syncCompactLogo(nav, compact, heroVisible) {
+      if (heroVisible) {
+        nav.classList.remove('site-subnav--hero-logo-offscreen');
+        compact.setAttribute('aria-hidden', 'true');
+        compact.setAttribute('tabindex', '-1');
+      } else {
+        nav.classList.add('site-subnav--hero-logo-offscreen');
+        compact.removeAttribute('aria-hidden');
+        compact.removeAttribute('tabindex');
+      }
+    }
+
+    function init() {
+      const nav = document.querySelector('[data-site-subnav]');
+      const heroLogo = document.getElementById('site-hero-logo');
+      const compact = document.getElementById('site-subnav-compact-logo');
+      if (!nav || !compact) return;
+      if (!heroLogo) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const entry = entries[0];
+          if (!entry) return;
+          syncCompactLogo(nav, compact, entry.isIntersecting);
+        },
+        { threshold: 0 },
+      );
+      observer.observe(heroLogo);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>

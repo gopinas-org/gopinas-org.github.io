@@ -15,7 +15,7 @@ const sorted = (await getCollection('articles')).sort((a, b) => b.data.date.valu
   <Hero variant="compact" />
   <main class="container container-lg py-4 pb-5 flex-grow-1">
     <h1 class="heading-rule fs-3 fw-bold mb-3">Articles</h1>
-    <p class="small text-secondary mb-4">
+    <p class="small text-body-secondary mb-4">
       Long-form pieces (not linked from the main site navigation). Share direct URLs to these pages.
     </p>
     {
@@ -28,7 +28,7 @@ const sorted = (await getCollection('articles')).sort((a, b) => b.data.date.valu
               <a class="fw-semibold" href={`/articles/${a.id}/`}>
                 {a.data.title}
               </a>
-              <span class="text-secondary small"> — {formatDate(a.data.date)}</span>
+              <span class="article-date small"> — {formatDate(a.data.date)}</span>
             </li>
           ))}
         </ul>

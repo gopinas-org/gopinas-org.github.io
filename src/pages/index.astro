@@ -62,15 +62,15 @@ const featured = allArticles
                       <span class="d-block min-w-0 flex-grow-1">
                         <span class="d-block">
                           <span class="home-entry-link-title d-inline fw-semibold">{n.data.title}</span>
-                          <span class="text-secondary small"> — {formatDate(n.data.date)}</span>
+                          <span class="article-date small"> — {formatDate(n.data.date)}</span>
                         </span>
                         {n.data.excerpt && <p class="mb-0 mt-2 text-body small">{n.data.excerpt}</p>}
                       </span>
                     </a>
                   ) : (
                     <>
-                      <a href={`/news/${n.id}/`}>{n.data.title}</a>
-                      <span class="text-secondary small"> — {formatDate(n.data.date)}</span>
+                      <a class="home-entry-link-title fw-semibold" href={`/news/${n.id}/`}>{n.data.title}</a>
+                      <span class="article-date small"> — {formatDate(n.data.date)}</span>
                       {n.data.excerpt && <p class="mb-0 mt-1 text-body small">{n.data.excerpt}</p>}
                     </>
                   )}
@@ -114,7 +114,7 @@ const featured = allArticles
                       </div>
                       <span class="d-block min-w-0 flex-grow-1">
                         <span class="home-entry-link-title d-inline fw-semibold">{e.data.title}</span>
-                        <span class="text-secondary small">
+                        <span class="article-date small">
                           {' '}
                           — {formatDate(e.data.event_date)}
                           {e.data.location && ` · ${e.data.location}`}
@@ -123,8 +123,8 @@ const featured = allArticles
                     </a>
                   ) : (
                     <>
-                      <a href={`/events/${e.id}/`}>{e.data.title}</a>
-                      <span class="text-secondary small">
+                      <a class="home-entry-link-title fw-semibold" href={`/events/${e.id}/`}>{e.data.title}</a>
+                      <span class="article-date small">
                         {' '}
                         — {formatDate(e.data.event_date)}
                         {e.data.location && ` · ${e.data.location}`}

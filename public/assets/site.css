@@ -180,26 +180,94 @@ main .content-link:hover {
   color: var(--bs-primary);
 }
 .site-subnav {
-  background: linear-gradient(180deg, #0d4aa8 0%, var(--bs-primary) 48%, #002f7a 100%);
-  border-bottom: 3px solid var(--accent-yellow);
-  box-shadow: 0 2px 8px rgba(0, 59, 154, 0.25);
+  background: linear-gradient(180deg, #fafbfc 0%, #f0f2f6 45%, #e6e9f0 100%);
+  border-bottom: 2px solid rgba(0, 59, 154, 0.14);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.85) inset,
+    0 2px 10px rgba(0, 59, 154, 0.06);
 }
-.site-subnav a {
-  color: rgba(255, 255, 255, 0.95);
+.site-subnav-compact-logo {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  line-height: 1;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+.site-subnav-compact-wordmark {
+  font-family: "Grift", "Segoe UI", system-ui, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  color: #0a0a0a;
+  font-size: clamp(1rem, 2.2vw + 0.65rem, 1.35rem);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  white-space: nowrap;
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-subnav-compact-logo {
+    transition: none;
+  }
+}
+.site-subnav-compact-logo-img {
+  display: block;
+  max-height: 2rem;
+  width: auto;
+  height: auto;
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+}
+.site-subnav--hero-logo-offscreen .site-subnav-compact-logo {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.site-subnav-compact-logo:link,
+.site-subnav-compact-logo:visited,
+.site-subnav-compact-logo:hover,
+.site-subnav-compact-logo:active {
+  color: inherit;
   text-decoration: none;
 }
-.site-subnav a:hover {
-  color: #fff;
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
-}
-.site-subnav a:focus-visible {
-  color: #fff;
-  outline: 2px solid var(--accent-yellow);
+.site-subnav-compact-logo:focus-visible {
+  outline: 2px solid var(--bs-primary);
   outline-offset: 3px;
   border-radius: 2px;
 }
-.site-subnav a[aria-current="page"] {
+@media (max-width: 380px) {
+  .site-subnav-compact-logo-img {
+    max-height: 1.5rem;
+  }
+  .site-subnav-compact-wordmark {
+    font-size: 0.95rem;
+  }
+  .site-subnav-compact-logo {
+    gap: 0.3rem;
+  }
+}
+.site-subnav a {
+  color: var(--bs-primary);
+  text-decoration: none;
+}
+.site-subnav-links a:hover {
+  color: var(--bs-link-hover-color);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.site-subnav-links a:focus-visible {
+  color: var(--bs-primary);
+  outline: 2px solid var(--bs-primary);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.site-subnav-links a[aria-current="page"] {
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 0.2em;
@@ -248,9 +316,12 @@ main section h4 {
   max-width: 100%;
 }
 .site-footer-brand {
-  font-size: 1rem;
-  letter-spacing: -0.01em;
-  color: #f1f3f5;
+  font-family: "Grift", "Segoe UI", system-ui, sans-serif;
+  font-weight: 300;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.78);
 }
 .site-footer-nav a {
   color: #c8d0d8;
@@ -272,6 +343,12 @@ main section h4 {
   letter-spacing: 0.02em;
   color: #8f98a3;
 }
+/* Theme --bs-secondary is brand yellow; Bootstrap .text-secondary uses it with !important. */
+main .article-date,
+main .article-date time {
+  color: var(--bs-primary) !important;
+  font-variant-numeric: tabular-nums;
+}
 .article-thumb-figure {
   margin: 0;
 }
@@ -288,7 +365,13 @@ main section h4 {
   box-shadow: 0 0.5rem 1.25rem rgba(0, 59, 154, 0.12) !important;
   transform: translateY(-2px);
 }
+.article-showcase-title {
+  font-size: clamp(1.2rem, 2.8vw + 0.65rem, 1.85rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
 .article-showcase-thumb-wrap {
+  position: relative;
   aspect-ratio: 3 / 2;
   overflow: hidden;
   background: #e8edf5;
@@ -298,8 +381,15 @@ main section h4 {
   height: 100%;
   object-fit: cover;
   display: block;
+  transform: scale(1);
+  transition: transform 0.25s ease;
+}
+.article-showcase-card:hover .article-showcase-thumb,
+.article-showcase-card:focus-within .article-showcase-thumb {
+  transform: scale(1.05);
 }
 .home-entry-thumb-wrap {
+  position: relative;
   width: 26.25rem;
   max-width: min(92vw, 26.25rem);
   aspect-ratio: 3 / 2;
@@ -312,9 +402,43 @@ main section h4 {
   height: 100%;
   object-fit: cover;
   display: block;
+  transform: scale(1);
+  transition: transform 0.25s ease;
+}
+.home-entry-link:hover .home-entry-thumb,
+.home-entry-link:focus-within .home-entry-thumb {
+  transform: scale(1.05);
+}
+@media (prefers-reduced-motion: reduce) {
+  .article-showcase-thumb,
+  .home-entry-thumb {
+    transition: none;
+  }
+  .article-showcase-card:hover .article-showcase-thumb,
+  .article-showcase-card:focus-within .article-showcase-thumb,
+  .home-entry-link:hover .home-entry-thumb,
+  .home-entry-link:focus-within .home-entry-thumb {
+    transform: none;
+  }
+}
+@media (max-width: 767.98px) {
+  .home-entry-link.d-flex {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem !important;
+  }
+  .home-entry-thumb-wrap {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 .home-entry-link {
   border-radius: 0.25rem;
+}
+.home-entry-link-title {
+  font-size: clamp(1.08rem, 1.5vw + 0.85rem, 1.38rem);
+  line-height: 1.3;
+  letter-spacing: -0.015em;
 }
 .home-entry-link:hover .home-entry-link-title {
   text-decoration: underline !important;
