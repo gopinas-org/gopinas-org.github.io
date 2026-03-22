@@ -13,6 +13,7 @@ interface Props {
   decoding?: 'async' | 'auto' | 'sync';
   /** When true and the URL is optimizable, emit 1x + 2x srcset */
   retina?: boolean;
+  fetchpriority?: 'high' | 'low' | 'auto';
 }
 
 const {
@@ -25,6 +26,7 @@ const {
   loading = 'lazy',
   decoding = 'async',
   retina = true,
+  fetchpriority,
 } = Astro.props;
 
 const src1x = optimizeImageUrl(src, { width, height, crop });
@@ -43,4 +45,5 @@ const srcset = src1x !== src2x ? `${src2x} 2x` : undefined;
   class={className}
   loading={loading}
   decoding={decoding}
+  fetchpriority={fetchpriority}
 />

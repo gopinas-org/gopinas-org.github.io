@@ -1,4 +1,5 @@
 ---
+import { FAVICON_16_URL, FAVICON_192_URL, FAVICON_32_URL, LOGO_MARK_URL } from '../config/media';
 ---
 
   <main class="container container-lg py-4 pb-5 flex-grow-1">
@@ -13,8 +14,12 @@
       <h2 id="press-logos-heading" class="heading-rule fs-3 fw-bold mb-3">Logo &amp; brand assets</h2>
       <p>Official logo files are available on this site for reference. Prefer the mark and wordmark as provided; do not stretch, recolor, or alter proportions. Higher-resolution or alternate formats can be requested via the press contact below.</p>
       <ul>
-        <li><a class="content-link" href="/assets/logo-mark-no-margin.png">Logo mark (PNG)</a></li>
-        <li>Favicon set: <code class="small">/assets/favicon-16.png</code>, <code class="small">/assets/favicon-32.png</code>, <code class="small">/assets/favicon-192.png</code></li>
+        <li><a class="content-link" href={LOGO_MARK_URL}>Logo mark (PNG)</a></li>
+        <li>
+          Favicon set:{' '}
+          <code class="small">{FAVICON_16_URL}</code>, <code class="small">{FAVICON_32_URL}</code>,{' '}
+          <code class="small">{FAVICON_192_URL}</code>
+        </li>
       </ul>
     </section>
 

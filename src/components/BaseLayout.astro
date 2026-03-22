@@ -2,6 +2,13 @@
 import SiteNav from './SiteNav.astro';
 import SiteFooter from './SiteFooter.astro';
 import Seo from './Seo.astro';
+import {
+  APPLE_TOUCH_ICON_URL,
+  FAVICON_16_URL,
+  FAVICON_192_URL,
+  FAVICON_32_URL,
+} from '../config/media';
+import { getHeroImagePreloadUrl } from '../lib/heroImage';
 
 interface Props {
   title: string;
@@ -15,6 +22,7 @@ interface Props {
 
 const { title, description, canonicalPath, ogImage, ogType, isHome, jsonLdAboutGo } = Astro.props;
 const pathname = Astro.url.pathname;
+const heroImagePreloadHref = isHome ? getHeroImagePreloadUrl() : null;
 
 const aboutGoLd = {
   '@context': 'https://schema.org',
@@ -38,14 +46,14 @@ const aboutGoLd = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <link rel="icon" type="image/png" href="/assets/favicon-32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="/assets/favicon-16.png" sizes="16x16" />
-    <link rel="icon" type="image/png" href="/assets/favicon-192.png" sizes="192x192" />
-    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href={FAVICON_32_URL} sizes="32x32" />
+    <link rel="icon" type="image/png" href={FAVICON_16_URL} sizes="16x16" />
+    <link rel="icon" type="image/png" href={FAVICON_192_URL} sizes="192x192" />
+    <link rel="apple-touch-icon" href={APPLE_TOUCH_ICON_URL} />
     {
-      isHome && (
+      isHome && heroImagePreloadHref && (
         <>
-          <link rel="preload" as="image" href="/assets/hero-go-kids.png?v=8" />
+          <link rel="preload" as="image" href={heroImagePreloadHref} />
           <link rel="preload" as="font" href="/assets/Grift-Thin.woff2" type="font/woff2" crossorigin />
         </>
       )
