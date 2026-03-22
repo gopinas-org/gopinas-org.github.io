@@ -138,11 +138,20 @@ body {
   text-transform: lowercase;
   padding-left: 1.5em;
 }
-.hero-home-link {
+.hero-logo-link {
+  display: inline-block;
+  line-height: 0;
+  text-decoration: none;
+  color: inherit;
+}
+.hero-logo-link:link,
+.hero-logo-link:visited,
+.hero-logo-link:hover,
+.hero-logo-link:active {
   color: inherit;
   text-decoration: none;
 }
-.hero-home-link:focus-visible {
+.hero-logo-link:focus-visible {
   outline: 2px solid var(--bs-primary);
   outline-offset: 4px;
   border-radius: 4px;
