@@ -25,10 +25,15 @@ const sorted = (await getCollection('articles')).sort((a, b) => b.data.date.valu
         <ul class="list-unstyled mb-0">
           {sorted.map((a) => (
             <li class="mb-4">
-              <a class="fw-semibold" href={`/articles/${a.id}/`}>
-                {a.data.title}
-              </a>
-              <span class="article-date small"> — {formatDate(a.data.date)}</span>
+              <span class="article-entry-meta">
+                <a class="fw-semibold" href={`/articles/${a.id}/`}>
+                  {a.data.title}
+                </a>
+                <span class="article-date small">
+                  <span class="article-meta-sep" aria-hidden="true">— </span>
+                  {formatDate(a.data.date)}
+                </span>
+              </span>
             </li>
           ))}
         </ul>

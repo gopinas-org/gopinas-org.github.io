@@ -349,6 +349,29 @@ main .article-date time {
   color: var(--bs-primary) !important;
   font-variant-numeric: tabular-nums;
 }
+/* Title + date inline from md up; date on its own line below md. */
+.article-entry-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15rem;
+}
+@media (min-width: 768px) {
+  .article-entry-meta {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem;
+  }
+}
+.article-meta-sep {
+  display: none;
+}
+@media (min-width: 768px) {
+  .article-meta-sep {
+    display: inline;
+  }
+}
 .article-thumb-figure {
   margin: 0;
 }
