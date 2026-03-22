@@ -22,11 +22,37 @@ const sorted = (await getCollection('news')).sort((a, b) => b.data.date.valueOf(
         <ul class="list-unstyled mb-0">
           {sorted.map((n) => (
             <li class="mb-4">
-              <a class="fw-semibold" href={`/news/${n.id}/`}>
-                {n.data.title}
-              </a>
-              <span class="text-secondary small"> — {formatDate(n.data.date)}</span>
-              {n.data.excerpt && <p class="mb-0 mt-1">{n.data.excerpt}</p>}
+              {n.data.image ? (
+                <a
+                  class="home-entry-link d-flex gap-3 align-items-start text-reset text-decoration-none"
+                  href={`/news/${n.id}/`}
+                >
+                  <div class="home-entry-thumb-wrap rounded">
+                    <img
+                      class="home-entry-thumb"
+                      src={n.data.image}
+                      alt=""
+                      width="160"
+                      height="107"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <span>
+                    <span class="home-entry-link-title d-inline fw-semibold">{n.data.title}</span>
+                    <span class="text-secondary small"> — {formatDate(n.data.date)}</span>
+                    {n.data.excerpt && <p class="mb-0 mt-1 text-body">{n.data.excerpt}</p>}
+                  </span>
+                </a>
+              ) : (
+                <>
+                  <a class="fw-semibold" href={`/news/${n.id}/`}>
+                    {n.data.title}
+                  </a>
+                  <span class="text-secondary small"> — {formatDate(n.data.date)}</span>
+                  {n.data.excerpt && <p class="mb-0 mt-1">{n.data.excerpt}</p>}
+                </>
+              )}
             </li>
           ))}
         </ul>

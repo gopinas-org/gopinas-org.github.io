@@ -44,8 +44,33 @@ const featured = allArticles
             <ul class="list-unstyled mb-0">
               {newsList.map((n) => (
                 <li class="mb-3">
-                  <a href={`/news/${n.id}/`}>{n.data.title}</a>
-                  <span class="text-secondary small"> — {formatDate(n.data.date)}</span>
+                  {n.data.image ? (
+                    <a
+                      class="home-entry-link d-flex gap-3 align-items-start text-reset text-decoration-none"
+                      href={`/news/${n.id}/`}
+                    >
+                      <div class="home-entry-thumb-wrap rounded">
+                        <img
+                          class="home-entry-thumb"
+                          src={n.data.image}
+                          alt=""
+                          width="160"
+                          height="107"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </div>
+                      <span>
+                        <span class="home-entry-link-title d-inline fw-semibold">{n.data.title}</span>
+                        <span class="text-secondary small"> — {formatDate(n.data.date)}</span>
+                      </span>
+                    </a>
+                  ) : (
+                    <>
+                      <a href={`/news/${n.id}/`}>{n.data.title}</a>
+                      <span class="text-secondary small"> — {formatDate(n.data.date)}</span>
+                    </>
+                  )}
                 </li>
               ))}
             </ul>
@@ -70,12 +95,41 @@ const featured = allArticles
             <ul class="list-unstyled mb-0">
               {upcomingEvents.map((e) => (
                 <li class="mb-3">
-                  <a href={`/events/${e.id}/`}>{e.data.title}</a>
-                  <span class="text-secondary small">
-                    {' '}
-                    — {formatDate(e.data.event_date)}
-                    {e.data.location && ` · ${e.data.location}`}
-                  </span>
+                  {e.data.image ? (
+                    <a
+                      class="home-entry-link d-flex gap-3 align-items-start text-reset text-decoration-none"
+                      href={`/events/${e.id}/`}
+                    >
+                      <div class="home-entry-thumb-wrap rounded">
+                        <img
+                          class="home-entry-thumb"
+                          src={e.data.image}
+                          alt=""
+                          width="160"
+                          height="107"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </div>
+                      <span>
+                        <span class="home-entry-link-title d-inline fw-semibold">{e.data.title}</span>
+                        <span class="text-secondary small">
+                          {' '}
+                          — {formatDate(e.data.event_date)}
+                          {e.data.location && ` · ${e.data.location}`}
+                        </span>
+                      </span>
+                    </a>
+                  ) : (
+                    <>
+                      <a href={`/events/${e.id}/`}>{e.data.title}</a>
+                      <span class="text-secondary small">
+                        {' '}
+                        — {formatDate(e.data.event_date)}
+                        {e.data.location && ` · ${e.data.location}`}
+                      </span>
+                    </>
+                  )}
                 </li>
               ))}
             </ul>
