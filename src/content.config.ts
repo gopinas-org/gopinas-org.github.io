@@ -39,6 +39,8 @@ const events = defineCollection({
     end_date: z.coerce.date().optional(),
     location: z.string().optional(),
     registration_url: z.string().optional(),
+    image: z.string().optional(),
+    image_alt: z.string().optional(),
   }),
 });
 

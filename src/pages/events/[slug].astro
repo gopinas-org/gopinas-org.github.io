@@ -16,12 +16,14 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 const d = post.data;
 const description = d.location ? `${d.title} — ${d.location}` : d.title;
+const ogImage = d.image;
 ---
 
 <BaseLayout
   title={`${post.data.title} | GoPinas`}
   description={description}
   canonicalPath={`/events/${post.id}/`}
+  ogImage={ogImage}
 >
   <Hero variant="compact" />
   <main class="container container-lg py-4 pb-5 flex-grow-1">
@@ -51,6 +53,20 @@ const description = d.location ? `${d.title} — ${d.location}` : d.title;
           )
         }
       </header>
+      {
+        d.image && (
+          <figure class="article-thumb-figure mb-4">
+            <img
+              class="img-fluid rounded article-thumb-img"
+              src={d.image}
+              alt={d.image_alt ?? d.title}
+              width="1200"
+              height="630"
+              decoding="async"
+            />
+          </figure>
+        )
+      }
       <div class="post-content">
         <Content />
       </div>
