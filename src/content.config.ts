@@ -41,6 +41,15 @@ const events = defineCollection({
     registration_url: z.string().optional(),
     image: z.string().optional(),
     image_alt: z.string().optional(),
+    flickr_album: z
+      .object({
+        href: z.string().url(),
+        preview_src: z.string().url(),
+        embed_title: z.string().optional(),
+        preview_width: z.number().optional(),
+        preview_height: z.number().optional(),
+      })
+      .optional(),
   }),
 });
 

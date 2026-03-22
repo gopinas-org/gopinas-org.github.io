@@ -282,3 +282,10 @@ main section h4 {
   object-fit: cover;
   display: block;
 }
+.flickr-embed .flickr-embed-ratio {
+  max-width: 100%;
+  overflow: hidden;
+}
+.flickr-embed iframe {
+  max-width: 100%;
+}

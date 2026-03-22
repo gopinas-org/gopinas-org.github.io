@@ -17,6 +17,8 @@ const { Content } = await render(post);
 const d = post.data;
 const description = d.location ? `${d.title} — ${d.location}` : d.title;
 const ogImage = d.image;
+const flickr = d.flickr_album;
+const flickrTitle = flickr?.embed_title ?? d.title;
 ---
 
 <BaseLayout
@@ -70,6 +72,34 @@ const ogImage = d.image;
       <div class="post-content">
         <Content />
       </div>
+      {
+        flickr && (
+          <section class="flickr-embed mt-5 pt-4 border-top" aria-labelledby="flickr-embed-heading">
+            <h2 id="flickr-embed-heading" class="fs-5 fw-semibold mb-3">
+              Photos
+            </h2>
+            <div class="flickr-embed-ratio">
+              <a data-flickr-embed="true" href={flickr.href} title={flickrTitle}>
+                <img
+                  src={flickr.preview_src}
+                  width={flickr.preview_width ?? 1600}
+                  height={flickr.preview_height ?? 1200}
+                  alt={flickrTitle}
+                  class="img-fluid rounded"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+            </div>
+            <script is:inline async src="https://embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+            <p class="small text-secondary mb-0 mt-2">
+              <a class="content-link" href={flickr.href} rel="noopener noreferrer">
+                Open album on Flickr
+              </a>
+            </p>
+          </section>
+        )
+      }
     </article>
   </main>
 </BaseLayout>
