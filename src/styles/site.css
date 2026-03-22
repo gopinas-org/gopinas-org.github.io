@@ -117,6 +117,10 @@ body {
   font-size: clamp(1.65rem, 4vw + 0.85rem, 2.65rem);
   line-height: 0.8;
   letter-spacing: -0.02em;
+  text-shadow:
+    0 0 0.08em rgba(255, 255, 255, 0.98),
+    0 0 0.35em rgba(255, 255, 255, 0.75),
+    0 0.06em 0.12em rgba(255, 255, 255, 0.55);
 }
 .hero-brand-legal {
   font-family: "Grift", "Segoe UI", system-ui, sans-serif;
