@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../components/BaseLayout.astro';
+import CdnImage from '../../components/CdnImage.astro';
 import Hero from '../../components/Hero.astro';
 import { getCollection } from 'astro:content';
 import { formatDate } from '../../lib/formatDate';
@@ -24,21 +25,19 @@ const sorted = (await getCollection('events')).sort((a, b) => b.data.event_date.
             <li class="mb-4">
               {e.data.image ? (
                 <a
-                  class="home-entry-link d-flex gap-3 align-items-start text-reset text-decoration-none"
+                  class="home-entry-link d-flex gap-4 align-items-start text-reset text-decoration-none"
                   href={`/events/${e.id}/`}
                 >
                   <div class="home-entry-thumb-wrap rounded">
-                    <img
+                    <CdnImage
                       class="home-entry-thumb"
                       src={e.data.image}
                       alt=""
-                      width="160"
-                      height="107"
-                      loading="lazy"
-                      decoding="async"
+                      width={420}
+                      height={280}
                     />
                   </div>
-                  <span>
+                  <span class="d-block min-w-0 flex-grow-1">
                     <span class="home-entry-link-title d-inline fw-semibold">{e.data.title}</span>
                     <span class="text-secondary small">
                       {' '}

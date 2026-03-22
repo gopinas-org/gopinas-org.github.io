@@ -1,0 +1,46 @@
+---
+import type { ImageCrop } from '../lib/cdnImageUrl';
+import { optimizeImageUrl } from '../lib/cdnImageUrl';
+
+interface Props {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  class?: string;
+  crop?: ImageCrop;
+  loading?: 'lazy' | 'eager';
+  decoding?: 'async' | 'auto' | 'sync';
+  /** When true and the URL is optimizable, emit 1x + 2x srcset */
+  retina?: boolean;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  class: className,
+  crop = 'fill',
+  loading = 'lazy',
+  decoding = 'async',
+  retina = true,
+} = Astro.props;
+
+const src1x = optimizeImageUrl(src, { width, height, crop });
+const src2x = retina
+  ? optimizeImageUrl(src, { width: width * 2, height: height * 2, crop })
+  : src1x;
+const srcset = src1x !== src2x ? `${src2x} 2x` : undefined;
+---
+
+<img
+  src={src1x}
+  srcset={srcset}
+  alt={alt}
+  width={width}
+  height={height}
+  class={className}
+  loading={loading}
+  decoding={decoding}
+/>

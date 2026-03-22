@@ -283,8 +283,8 @@ main section h4 {
   display: block;
 }
 .home-entry-thumb-wrap {
-  width: 10rem;
-  max-width: 38vw;
+  width: 26.25rem;
+  max-width: min(92vw, 26.25rem);
   aspect-ratio: 3 / 2;
   overflow: hidden;
   flex-shrink: 0;

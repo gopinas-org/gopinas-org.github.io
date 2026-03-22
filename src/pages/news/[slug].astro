@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../../components/BaseLayout.astro';
+import CdnImage from '../../components/CdnImage.astro';
 import Hero from '../../components/Hero.astro';
 import { getCollection, render } from 'astro:content';
 import { formatDate } from '../../lib/formatDate';
+import { optimizeImageUrl } from '../../lib/cdnImageUrl';
 
 export async function getStaticPaths() {
   const posts = await getCollection('news');
@@ -16,7 +18,9 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 const d = post.data;
 const description = d.excerpt ?? d.title;
-const ogImage = d.image;
+const ogImage =
+  d.image &&
+  optimizeImageUrl(d.image, { width: 1200, height: 630, crop: 'fill' });
 const flickr = d.flickr_album;
 const flickrTitle = flickr?.embed_title ?? d.title;
 ---
@@ -40,13 +44,13 @@ const flickrTitle = flickr?.embed_title ?? d.title;
       {
         d.image && (
           <figure class="article-thumb-figure mb-4">
-            <img
+            <CdnImage
               class="img-fluid rounded article-thumb-img"
               src={d.image}
               alt={d.image_alt ?? d.title}
-              width="1200"
-              height="630"
-              decoding="async"
+              width={1200}
+              height={630}
+              loading="eager"
             />
           </figure>
         )

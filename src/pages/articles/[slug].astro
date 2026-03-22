@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../../components/BaseLayout.astro';
+import CdnImage from '../../components/CdnImage.astro';
 import Hero from '../../components/Hero.astro';
 import { getCollection, render } from 'astro:content';
 import { formatDate } from '../../lib/formatDate';
+import { optimizeImageUrl } from '../../lib/cdnImageUrl';
 
 export async function getStaticPaths() {
   const posts = await getCollection('articles');
@@ -15,7 +17,9 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await render(post);
 const description = post.data.excerpt ?? post.data.title;
-const ogImage = post.data.image;
+const ogImage =
+  post.data.image &&
+  optimizeImageUrl(post.data.image, { width: 1200, height: 630, crop: 'fill' });
 
 function linkHref(url: string) {
   if (url.includes('://')) return url;
@@ -42,13 +46,13 @@ function linkHref(url: string) {
       {
         post.data.image && (
           <figure class="article-thumb-figure mb-4">
-            <img
+            <CdnImage
               class="img-fluid rounded article-thumb-img"
               src={post.data.image}
               alt={post.data.image_alt ?? post.data.title}
-              width="1200"
-              height="630"
-              decoding="async"
+              width={1200}
+              height={630}
+              loading="eager"
             />
           </figure>
         )
