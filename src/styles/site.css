@@ -1,20 +1,20 @@
 @font-face {
   font-family: "Grift";
-  src: url("Grift-Light.woff2") format("woff2");
+  src: url("../assets/fonts/Grift-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Grift";
-  src: url("Grift-BoldItalic.woff2") format("woff2");
+  src: url("../assets/fonts/Grift-BoldItalic.woff2") format("woff2");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "Grift";
-  src: url("Grift-Thin.woff2") format("woff2");
+  src: url("../assets/fonts/Grift-Thin.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
   font-display: swap;

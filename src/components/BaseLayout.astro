@@ -1,4 +1,6 @@
 ---
+import '../styles/site.css';
+import griftThinWoff2 from '../assets/fonts/Grift-Thin.woff2?url';
 import SiteNav from './SiteNav.astro';
 import SiteFooter from './SiteFooter.astro';
 import Seo from './Seo.astro';
@@ -54,7 +56,7 @@ const aboutGoLd = {
       isHome && heroImagePreloadHref && (
         <>
           <link rel="preload" as="image" href={heroImagePreloadHref} />
-          <link rel="preload" as="font" href="/assets/Grift-Thin.woff2" type="font/woff2" crossorigin />
+          <link rel="preload" as="font" href={griftThinWoff2} type="font/woff2" crossorigin />
         </>
       )
     }
@@ -64,7 +66,6 @@ const aboutGoLd = {
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/assets/site.css" />
     <Seo title={title} description={description} canonicalPath={canonicalPath} ogImage={ogImage} ogType={ogType} />
     {jsonLdAboutGo && <script type="application/ld+json" set:html={JSON.stringify(aboutGoLd)} />}
   </head>
