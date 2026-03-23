@@ -2,7 +2,7 @@
 title: 'GoPinas! BGC Meetup - 2026-02-21'
 date: 2026-02-21
 excerpt: 'Our BGC meetup welcomed a great group of female beginners and returning players. No kids this time, but plenty of first-time energy at the boards.'
-image: 'https://live.staticflickr.com/65535/55162525957_d6f419fc29_h.jpg'
+image: 'https://res.cloudinary.com/dukrxdzot/image/upload/v1774259130/gopinas/dscf2769.jpg'
 image_alt: 'GoPinas BGC meetup at Commune Cafe with players around Go boards'
 flickr_album:
   href: 'https://www.flickr.com/photos/204387165@N04/albums/72177720332670747'
