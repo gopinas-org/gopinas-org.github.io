@@ -50,6 +50,7 @@ const events = defineCollection({
     end_date: z.coerce.date().optional(),
     location: z.string().optional(),
     registration_url: z.string().optional(),
+    registration_embed_url: z.string().url().optional(),
     image: z.string().optional(),
     image_alt: z.string().optional(),
   }),

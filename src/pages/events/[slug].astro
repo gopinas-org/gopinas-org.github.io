@@ -59,6 +59,21 @@ const ogImage =
         }
       </header>
       {
+        d.registration_embed_url && (
+          <section class="event-registration-embed mb-4" aria-label="Registration form">
+            <iframe
+              src={d.registration_embed_url}
+              width="100%"
+              height="1260"
+              loading="lazy"
+              title={`${d.title} registration form`}
+            >
+              Loading form...
+            </iframe>
+          </section>
+        )
+      }
+      {
         d.image && (
           <figure class="article-thumb-figure mb-4">
             <CdnImage
