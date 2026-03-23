@@ -1,7 +1,7 @@
 ---
 title: 'GoPinas! BGC Meetup - 2026-02-21'
 date: 2026-02-21
-excerpt: 'Our BGC meetup welcomed a great group of female beginners and returning players. No kids this time, but plenty of first-time energy at the boards.'
+excerpt: 'A welcoming BGC afternoon at Commune Cafe, with female beginners and returning players sharing tables, ideas, and their first games of Go.'
 image: 'https://res.cloudinary.com/dukrxdzot/image/upload/v1774259130/gopinas/dscf2769.jpg'
 image_alt: 'GoPinas BGC meetup at Commune Cafe with players around Go boards'
 flickr_album:
@@ -12,6 +12,6 @@ flickr_album:
   preview_height: 1200
 ---
 
-Our BGC meetup at **Commune Cafe** in Bonifacio Global City had a wonderful mix of returning players and **female beginners** trying Go for the first time. There were **no kids this time**, but the boards were full of curiosity, questions, and fast learning all afternoon.
+At **Commune Cafe** in Bonifacio Global City, this meetup brought together returning members and an inspiring group of **female beginners** discovering Go for the first time. From opening moves to endgame questions, every table carried the same spirit: patient teaching, lively discussion, and genuine curiosity.
 
-Thank you to everyone who joined and helped keep the space warm and welcoming for new players.
+Thank you to everyone who joined and made the afternoon both friendly and energizing for new and familiar faces alike.
