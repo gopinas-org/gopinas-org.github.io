@@ -9,8 +9,8 @@ interface Props {
 const { pathname } = Astro.props;
 const p = pathname.replace(/\/$/, '') || '/';
 const isHome = p === '/' || p === '';
-const isAboutGo = p === '/about-go.html';
-const isAbout = p === '/about.html';
+const isAboutGo = p === '/about-go';
+const isAbout = p === '/about';
 ---
 
 <nav class="site-subnav sticky-top z-3 py-3" aria-label="Main" data-site-subnav>
@@ -36,8 +36,8 @@ const isAbout = p === '/about.html';
     </a>
     <div class="site-subnav-links d-flex flex-wrap justify-content-center gap-4 small">
       <a class="fw-semibold" href="/" aria-current={isHome ? 'page' : undefined}>Home</a>
-      <a class="fw-semibold" href="/about-go.html" aria-current={isAboutGo ? 'page' : undefined}>About Go</a>
-      <a class="fw-semibold" href="/about.html" aria-current={isAbout ? 'page' : undefined}>About Us</a>
+      <a class="fw-semibold" href="/about-go/" aria-current={isAboutGo ? 'page' : undefined}>About Go</a>
+      <a class="fw-semibold" href="/about/" aria-current={isAbout ? 'page' : undefined}>About Us</a>
     </div>
   </div>
 </nav>

@@ -49,7 +49,7 @@ const ogImage =
         </p>
         {d.location && <p class="mb-1"><strong>Location:</strong> {d.location}</p>}
         {
-          d.registration_url && (
+          d.registration_url && !d.registration_embed_url && (
             <p class="mb-0">
               <a class="content-link" href={d.registration_url} rel="noopener noreferrer">
                 Registration / details

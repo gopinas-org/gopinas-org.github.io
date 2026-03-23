@@ -5,7 +5,7 @@ interface Props {
 
 const { pathname } = Astro.props;
 const p = pathname.replace(/\/$/, '') || '/';
-const isPressKit = p === '/press-kit.html';
+const isPressKit = p === '/press-kit';
 const year = new Date().getFullYear();
 ---
 
@@ -18,9 +18,9 @@ const year = new Date().getFullYear();
     >
       <a href="/#news">News</a>
       <a href="/#upcoming-events">Upcoming Events</a>
-      <a href="/about-go.html">About Go</a>
-      <a href="/about.html">About Us</a>
-      <a href="/press-kit.html" aria-current={isPressKit ? 'page' : undefined}>Press Kit</a>
+      <a href="/about-go/">About Go</a>
+      <a href="/about/">About Us</a>
+      <a href="/press-kit/" aria-current={isPressKit ? 'page' : undefined}>Press Kit</a>
     </nav>
     <p class="site-footer-copy mb-0 small">© {year} All rights reserved.</p>
   </div>
