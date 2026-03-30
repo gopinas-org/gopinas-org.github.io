@@ -8,6 +8,8 @@ registration_embed_url: 'https://docs.google.com/forms/d/e/1FAIpQLSfSmqPLYiAJbF6
 
 **Next meetup:** Saturday, 28 March 2026. Casual play and chat, new players and regulars welcome.
 
+**Advisory:** There is no BGC meetup on Holy Saturday, April 4. See full announcement: [No BGC Meetup on April 4](/news/gopinas-bgc-no-meetup-2026-04-04/).
+
 **Advisory:** There is no BGC meetup on Saturday, April 11, due to a community-building event in Makati. See full announcement: [No BGC Meetup on April 11](/news/gopinas-bgc-no-meetup-2026-04-11/).
 
 Those bringing vehicles may use the pay parking in **SM Aura**.
