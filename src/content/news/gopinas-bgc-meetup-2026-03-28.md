@@ -1,7 +1,7 @@
 ---
 title: 'GoPinas! BGC Meetup 2026-03-28'
 date: 2026-03-28
-excerpt: 'Another hot afternoon in BGC, but the heat didn't slow anyone down—new faces joined the regulars at the boards at Commune Café.'
+excerpt: "Another hot afternoon in BGC, but the heat didn't slow anyone down—new faces joined the regulars at the boards at Commune Café."
 image: 'https://live.staticflickr.com/65535/55178241335_d3c72cfc45_h.jpg'
 image_alt: 'GoPinas BGC meetup — players around a Go board'
 flickr_album:
