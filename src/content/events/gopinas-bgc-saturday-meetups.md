@@ -1,5 +1,5 @@
 ---
-title: 'GoPinas! BGC Saturday Meetups'
+title: 'GoPinas! BGC Saturday Meetups resume on April 18'
 event_date: 2026-04-18
 location: 'Commune Cafe, The Aston at Two Serendra, McKinley Parkway, BGC, Taguig (in front of SM Aura)'
 registration_url: 'https://forms.gle/Um9t9uh7Cpoup5W99'
