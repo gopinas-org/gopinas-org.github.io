@@ -18,6 +18,7 @@ const canonical = new URL(canonicalPath, site).href;
 const ogImageUrl = new URL(ogImage ?? DEFAULT_OG_IMAGE, site).href;
 ---
 
+<meta http-equiv="Cache-Control" content="public, max-age=300" />
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
 <meta property="og:type" content={ogType} />
