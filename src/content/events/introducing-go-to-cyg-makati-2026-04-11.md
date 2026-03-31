@@ -10,15 +10,3 @@ This April 11, we are doing exactly that with **Christian Youth Generation (CYG)
 ## Who is CYG Makati?
 
 CYG — Christian Youth Generation — is a community of young Christians united by faith, friendship, and a shared desire to grow together. They are active, engaged, and open to new experiences, and we believe they might be interested to learn the game of Go.
-
-## Why Go?
-
-Go teaches you to think ahead, to respect your opponent, to find balance between attack and patience. For young people, it offers a rare kind of screen-free engagement — quiet, focused, and deeply social at the same time. Two players, one board, and a conversation that happens entirely through stones.
-
-We have seen it happen at our regular meetups: strangers become curious, the curious become players, and players come back. We believe the same can happen within CYG.
-
-## What to expect
-
-We will set up boards and walk CYG members through the basics — the rules, the feel of placing a stone, and the simple joy of a well-played game. No experience needed. Whether someone plays one game or spends the whole session at the board, they are welcome.
-
-We are not asking CYG to become a Go club. We are simply sharing something we love with a community that is already there.
