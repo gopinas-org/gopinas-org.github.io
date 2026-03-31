@@ -9,7 +9,7 @@ This April 11, we are doing exactly that with **Christian Youth Generation (CYG)
 
 ## Who is CYG Makati?
 
-CYG — Christian Youth Generation — is a community of young Filipinos united by faith, friendship, and a shared desire to grow together. They are active, engaged, and open to new experiences. When we heard about their community, we saw an opportunity: not to build something new, but to introduce something meaningful into what already exists.
+CYG — Christian Youth Generation — is a community of young Christians united by faith, friendship, and a shared desire to grow together. They are active, engaged, and open to new experiences, and we believe they might be interested to learn the game of Go.
 
 ## Why Go?
 
