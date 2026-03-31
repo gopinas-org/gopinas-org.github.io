@@ -1,0 +1,30 @@
+---
+title: 'Sharing Go with CYG Makati'
+event_date: 2026-04-11
+---
+
+Go is one of the oldest strategy games in the world — deceptively simple to learn, yet deep enough to hold a lifetime of discovery. At GoPinas, we believe one of the best ways to grow the game is not to wait for people to find us, but to bring Go to where people already gather.
+
+This April 11, we are doing exactly that with **Christian Youth Generation (CYG) Makati**.
+
+## Who is CYG Makati?
+
+CYG — Christian Youth Generation — is a community of young Filipinos united by faith, friendship, and a shared desire to grow together. They are active, engaged, and open to new experiences. When we heard about their community, we saw an opportunity: not to build something new, but to introduce something meaningful into what already exists.
+
+## Why Go?
+
+Go teaches you to think ahead, to respect your opponent, to find balance between attack and patience. For young people, it offers a rare kind of screen-free engagement — quiet, focused, and deeply social at the same time. Two players, one board, and a conversation that happens entirely through stones.
+
+We have seen it happen at our regular meetups: strangers become curious, the curious become players, and players come back. We believe the same can happen within CYG.
+
+## What to expect
+
+We will set up boards and walk CYG members through the basics — the rules, the feel of placing a stone, and the simple joy of a well-played game. No experience needed. Whether someone plays one game or spends the whole session at the board, they are welcome.
+
+We are not asking CYG to become a Go club. We are simply sharing something we love with a community that is already there.
+
+## Join us
+
+If you are part of CYG Makati or know someone who is, we hope to see you on April 11. And if you are curious about Go regardless of where you are from, our regular meetups are open to everyone — beginners most of all.
+
+The game is easy to start. The rest takes care of itself.
