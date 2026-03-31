@@ -22,9 +22,3 @@ We have seen it happen at our regular meetups: strangers become curious, the cur
 We will set up boards and walk CYG members through the basics — the rules, the feel of placing a stone, and the simple joy of a well-played game. No experience needed. Whether someone plays one game or spends the whole session at the board, they are welcome.
 
 We are not asking CYG to become a Go club. We are simply sharing something we love with a community that is already there.
-
-## Join us
-
-If you are part of CYG Makati or know someone who is, we hope to see you on April 11. And if you are curious about Go regardless of where you are from, our regular meetups are open to everyone — beginners most of all.
-
-The game is easy to start. The rest takes care of itself.
