@@ -1,0 +1,27 @@
+---
+title: 'Beginner Tournament — September 12, 2026'
+event_date: 2026-09-12
+location: 'The Aston at Two Serendra, McKinley Parkway, BGC, Taguig (in front of SM Aura)'
+---
+
+The Go Federation of the Philippines (**GoPinas**) is launching a **Beginner Tournament** — a friendly first tournament for new and casual players.
+
+**Saturday, 12 September 2026**, **1:00 PM – 6:00 PM**, at the **Commune Cafe** pop-up / Aston function room inside [The Aston at Two Serendra](https://www.google.com/maps/place/The+Aston+-+Two+Serendra/@14.5468365,121.0535651,17z/data=!4m6!3m5!1s0x3397c8eda0137c43:0xeb8f6f40f31fa7d0!8m2!3d14.5468365!4d121.0535651), McKinley Parkway, Bonifacio Global City, Taguig (in front of **SM Aura**). Maps pins the Aston building — the cafe does not have its own BGC listing.
+
+- **1:00 PM – 1:30 PM** — Check-in and pairing ([Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=GoPinas%20Beginner%20Tournament%20check-in&dates=20260912T130000/20260912T133000&ctz=Asia/Manila&location=The%20Aston%20at%20Two%20Serendra%2C%20McKinley%20Parkway%2C%20BGC%2C%20Taguig&details=GoPinas%20Beginner%20Tournament%20check-in%20and%20pairing.%20Maps%3A%20https%3A%2F%2Fwww.google.com%2Fmaps%2Fplace%2FThe%2BAston%2B-%2BTwo%2BSerendra%2F%4014.5468365%2C121.0535651%2C17z%2Fdata%3D%214m6%213m5%211s0x3397c8eda0137c43%3A0xeb8f6f40f31fa7d0%218m2%213d14.5468365%214d121.0535651))
+- **1:30 PM – 6:00 PM** — 13×13 Swiss rounds ([Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=GoPinas%20Beginner%20Tournament%20rounds&dates=20260912T133000/20260912T180000&ctz=Asia/Manila&location=The%20Aston%20at%20Two%20Serendra%2C%20McKinley%20Parkway%2C%20BGC%2C%20Taguig&details=GoPinas%20Beginner%20Tournament%2013x13%20Swiss%20rounds.%20Maps%3A%20https%3A%2F%2Fwww.google.com%2Fmaps%2Fplace%2FThe%2BAston%2B-%2BTwo%2BSerendra%2F%4014.5468365%2C121.0535651%2C17z%2Fdata%3D%214m6%213m5%211s0x3397c8eda0137c43%3A0xeb8f6f40f31fa7d0%218m2%213d14.5468365%214d121.0535651))
+
+Open to anyone new to Go or still finding their feet. No rank required. Stronger players are welcome as helpers and review partners after games. Bring a board if you have one.
+
+**How we play**
+
+- Treat opponents, the board, and the clock with respect.
+- No coaching during a game; questions and reviews after the game are encouraged.
+- Play in a spirit of fair play — this is a first tournament, not a proving ground.
+
+Those bringing vehicles may use the pay parking in **SM Aura**.
+
+**Helpful links**
+
+- [Open The Aston at Two Serendra in Google Maps](https://www.google.com/maps/place/The+Aston+-+Two+Serendra/@14.5468365,121.0535651,17z/data=!4m6!3m5!1s0x3397c8eda0137c43:0xeb8f6f40f31fa7d0!8m2!3d14.5468365!4d121.0535651)
+- [Add the full afternoon (1:00 PM – 6:00 PM) to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=GoPinas%20Beginner%20Tournament&dates=20260912T130000/20260912T180000&ctz=Asia/Manila&location=The%20Aston%20at%20Two%20Serendra%2C%20McKinley%20Parkway%2C%20BGC%2C%20Taguig&details=GoPinas%20Beginner%20Tournament%20%281%E2%80%936%20PM%29%20at%20The%20Aston%20at%20Two%20Serendra%2C%20BGC.%2013x13%20Swiss%20for%20new%20and%20casual%20players.%20Maps%3A%20https%3A%2F%2Fwww.google.com%2Fmaps%2Fplace%2FThe%2BAston%2B-%2BTwo%2BSerendra%2F%4014.5468365%2C121.0535651%2C17z%2Fdata%3D%214m6%213m5%211s0x3397c8eda0137c43%3A0xeb8f6f40f31fa7d0%218m2%213d14.5468365%214d121.0535651)
